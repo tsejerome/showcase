@@ -1,12 +1,3 @@
-const cursor = document.getElementById("cursor-custom"),
-  radius = cursor.offsetHeight / 2;
-
-document.addEventListener("mousemove", (e) => {
-  let top = e.clientY - radius,
-    left = e.clientX - radius;
-
-  cursor.style = `top: ${top}px; left: ${left}px`;
-});
 
 $('.error').draggable();
 
@@ -47,13 +38,58 @@ $(document).on('scroll', function(){
   }
 })
 
+let agent;
+let agentSpeaked = false;
 $(function () { 
   let menuOpened = false;
   const closeMenu = () =>{
     $('#menu').removeClass('opened')
   }
+  
+  function animate(agent, animations){  
+    
+    function doneCallback(animation){
+      // console.log('done ' + animation);
+    }
+    
+    let statesText = animations.join(' '),
+        $state = $('.js-state'),
+        $states = $('.js-states');
+      
+    for(var i = 0; i<animations.length; i++){      
+      ((index)=>{
+        setTimeout(_=>{
+          let animation = animations[index];
+          let currentStateInStates = statesText.replace(animation, `<b>${animation}</b>`);
+          $state.text(animation);                
+          $states.html(currentStateInStates);
+          agent.play(animation, undefined, doneCallback.bind(null, animation));  
+        }, index*8000);
+      })(i);        
+    }
+  }
+  
+  const agentSpeaking = () => {
+    const animations = agent.animations();    
+    agent.moveTo(170,(window.innerHeight || document.body.clientHeight)-113);
+    
+
+    setTimeout(animate.bind(null, agent, animations), 8000);        
+  
+    setTimeout(function() {
+      agent.speak("hmmm...");
+      setTimeout(function() {
+        agent.speak("Looks like you're trying to explore things about Jerome?");
+      },1000)
+    },1000)  
+  }
   const openMenu = () =>{
-    $('#menu').addClass('opened')
+    $('#menu').addClass('opened');
+    let clippyBoi = document.getElementsByClassName('clippy')[0];
+    let clippyBoiSays = document.getElementsByClassName('clippy-balloon')[0];
+   
+    if(!agentSpeaked) agentSpeaking();
+    agentSpeaked = true;
   }
   const setMenuOpened = () =>{
     if(menuOpened){ 
@@ -75,8 +111,20 @@ $(function () {
       setMenuOpened();
     }
   })
+  function runClippy(clippy) {
+    agent = clippy;
+    let clippyBoi = document.getElementsByClassName('clippy')[0];
+    let clippyBoiSays = document.getElementsByClassName('clippy-balloon')[0];
+  
+    $('.nav-inner-wrapper').append($(clippyBoi));
+    $('.nav-inner-wrapper').append($(clippyBoiSays));
+    agent.show();
+    
+  
+    // add stuff here:
+  }  
+  clippy.load('Clippy', runClippy);
 });
-
 
 
 // (function () {

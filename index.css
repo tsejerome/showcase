@@ -9,6 +9,9 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+:root {
+  cursor: url(https://i.imgur.com/g7rRv2N.png), auto;
+}
 
 body {
 
@@ -16,7 +19,6 @@ body {
       -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  cursor: none;
 }
 
 .banner-me{
@@ -406,7 +408,6 @@ ul.extra-list-lol div{
 }
 
 .hamburger-trigger{
-  float: left;
   margin-left: 2px;
   margin-bottom: 2px;
   vertical-align: middle;
@@ -427,6 +428,12 @@ ul.extra-list-lol div{
   width: 77px;
   height: 24px;
   bottom: 10px;
+}
+
+.nav-inner-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .start-button{

@@ -1,15 +1,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0, user-scalable=no">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Raleway" rel="stylesheet">
 <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="./src/clippy/build/clippy.css">
 <body>
     <nav id="menu" role="navigation">
+        <div class='nav-inner-wrapper'>
+            
+        </div>
     </nav>
     <div title="Start Menu" class="hamburger-trigger">
         <img src="https://win98icons.alexmeub.com/images/start-button.png" class="start-button"/>
     </div>
     <div class="main">
-        <div id="cursor-custom"></div>
         <input hidden id="menu-switch" type="checkbox" />
         <div class="banner wrapper">
             <svg height="320" width="400" class="logo-triangle normal">
@@ -178,6 +182,7 @@
         <script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>
         <script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
         <!-- <script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script> -->
+        <script src="./src/clippy/build/clippy.js"></script>
         <script src="index.js"></script>
         <script>
             $(function () { 
