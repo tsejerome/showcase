@@ -403,8 +403,19 @@ ul.extra-list-lol div{
   background-color: #fff;
 }
 
+
+#menu .clippy {
+  display: none!important;
+  position: absolute!important;
+}
+
 #menu.opened {
   left: 0px;
+}
+
+
+#menu.opened .clippy{
+  display: block!important;
 }
 
 .hamburger-trigger{
