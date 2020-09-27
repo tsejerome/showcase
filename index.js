@@ -91,7 +91,7 @@ $(function () {
     if(!agentSpeaked) agentSpeaking();
     agentSpeaked = true;
   }
-  const setMenuOpened = () =>{
+  const triggerMenu = () =>{
     if(menuOpened){ 
       closeMenu();
       menuOpened = false;
@@ -100,15 +100,15 @@ $(function () {
       menuOpened = true;
     }
   }
-  $('.hamburger-trigger').click(function(){
-    setMenuOpened();
+  $('.hamburger-trigger, .nav-content > a').click(function(){
+    triggerMenu();
   })
   
   $('.main').on('click',function(e){
     e.preventDefault();
     e.stopPropagation();
     if(menuOpened){
-      setMenuOpened();
+      triggerMenu();
     }
   })
   function runClippy(clippy) {

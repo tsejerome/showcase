@@ -416,7 +416,10 @@ ul.extra-list-lol div{
 #menu .nav-content{
 	text-align: center;
 	font-size: 2em;
-	font-family: 'Bungee Shade', cursive;
+  font-family: 'Bungee Shade', cursive;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
 }
 
 

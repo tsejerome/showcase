@@ -8,12 +8,12 @@
     <nav id="menu" role="navigation">
         <div class='nav-inner-wrapper'>
             <div class='nav-content'>
-                <div style="color:#73f1b8">Home</div>
-                <div style="color:#f47c70">Intro</div>
-                <div style="color:#f4d55b">Tech</div>
-                <div style="color:#f3549c">Tractions</div>
+                <a style="color:#73f1b8" href="#banner">Home</a>
+                <a style="color:#f47c70" href="#about-me">Intro</a>
+                <a style="color:#f4d55b" href="#tech">Tech</a>
+                <!-- <div style="color:#f3549c">Tractions</div>
                 <div style="color:#778cf3">Food</div>
-                <div style="color:#888690">Contact</div>
+                <div style="color:#888690">Contact</div> -->
             </div>
         </div>
     </nav>
@@ -22,7 +22,7 @@
     </div>
     <div class="main">
         <input hidden id="menu-switch" type="checkbox" />
-        <div class="banner wrapper">
+        <div id="banner" class="banner wrapper">
             <svg height="320" width="400" class="logo-triangle normal">
                 <defs>
                     <linearGradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -83,7 +83,7 @@
         
         <div class="grid"></div>
         </div>
-        <div class='about-me container'>
+        <div id="about-me" class='about-me container'>
             <div class="msg" align='center'>
             <p class='highlight'>Hello there</p>
             <p>I am Jerome, a Software tech guy and an entrepreneur.</p>
@@ -96,7 +96,7 @@
             <p class="continue">Click to continue <span class="blink">_</span></p>
         </div>
         </div>
-        <div class='tech-stuff-wrapper'>
+        <div id="tech" class='tech-stuff-wrapper'>
             <div class='tech-stuff' style="min-height: 500px">
                 <h1 class=''> Tech I like</h1>
                 <p>
@@ -159,7 +159,7 @@
                 </ul>
             </div>
         </div>
-        <div class="extra-about-me-main-wrapper" style="background: #55aaaa; height: 2000px;">
+        <div id="tractions" class="extra-about-me-main-wrapper" style="background: #55aaaa; height: 2000px;">
             <!-- fav books -->
                 <div class="spacer s2"></div>
                 <div class="spacer s0" id="trigger"></div>
@@ -176,6 +176,8 @@
                 <div class="spacer s2"></div>
             
         </div>
+        <!-- <div id="food"></div>
+        <div id="contact"></div> -->
         <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
