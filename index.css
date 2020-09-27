@@ -10,7 +10,7 @@ html {
   box-sizing: border-box;
 }
 :root {
-  cursor: url(https://i.imgur.com/g7rRv2N.png), auto;
+  cursor: url(https://i.imgur.com/g7rRv2N.png), default;
 }
 
 body {
@@ -400,7 +400,7 @@ ul.extra-list-lol div{
   -webkit-box-shadow: 9px 10px 61px -16px rgb(0 0 0 / 23%);
   -moz-box-shadow: 9px 10px 61px -16px rgb(0 0 0 / 23%);
   box-shadow: 9px 10px 61px -16px rgb(0 0 0 / 23%);
-  background-color: #fff;
+  background-color: #3b3950;
 }
 
 
@@ -411,6 +411,12 @@ ul.extra-list-lol div{
 
 #menu.opened {
   left: 0px;
+}
+
+#menu .nav-content{
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Bungee Shade', cursive;
 }
 
 
@@ -438,7 +444,7 @@ ul.extra-list-lol div{
   z-index: 200;
   width: 77px;
   height: 24px;
-  bottom: 10px;
+  top: 10px;
 }
 
 .nav-inner-wrapper{
