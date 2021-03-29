@@ -2,33 +2,33 @@
 $('.error').draggable();
 
 var error = '<div class="error">' + $('.error').html() + '</div>',
-    	x = window.innerWidth / 3,
-    y = window.innerHeight / 3;
+  x = window.innerWidth / 3,
+  y = window.innerHeight / 3;
 
-$('body').on('click', '.ok, .close-button', function() {
+$('body').on('click', '.ok, .close-button', function () {
   $('body').append(error);
   $('.error').last()
     .css({
       top: y + 'px',
       left: x + 'px'
     })
-  			  .draggable();
-  
-  x+=4; y+=4;
+    .draggable();
+
+  x += 4; y += 4;
 });
 
-$('.continue').click(function(){
+$('.continue').click(function () {
   $([document.documentElement, document.body]).animate({
     scrollTop: $(".tech-stuff-wrapper").offset().top
   }, 2000);
 })
 
-$('.close-button').on('click',function(){
+$('.close-button').on('click', function () {
   $(this).parents(('.plane')).remove();
 })
 
-$(document).on('scroll', function(){
-  if(window.scrollY + 300 > $('.extra-about-me-main-wrapper .error.box:last-child').position()){
+$(document).on('scroll', function () {
+  if (window.scrollY + 300 > $('.extra-about-me-main-wrapper .error.box:last-child').position()) {
     const innerTemplate = $('.template.default.chatroom__no-chat__inner-wrapper');
     const innerDom = innerTemplate.clone();
     const template = $(".template.chatroom__no-chat__wrapper");
@@ -40,74 +40,74 @@ $(document).on('scroll', function(){
 
 let agent;
 let agentSpeaked = false;
-$(function () { 
+$(function () {
   let menuOpened = false;
-  const closeMenu = () =>{
+  const closeMenu = () => {
     $('#menu').removeClass('opened')
   }
-  
-  function animate(agent, animations){  
-    
-    function doneCallback(animation){
+
+  function animate(agent, animations) {
+
+    function doneCallback(animation) {
       // console.log('done ' + animation);
     }
-    
+
     let statesText = animations.join(' '),
-        $state = $('.js-state'),
-        $states = $('.js-states');
-      
-    for(var i = 0; i<animations.length; i++){      
-      ((index)=>{
-        setTimeout(_=>{
+      $state = $('.js-state'),
+      $states = $('.js-states');
+
+    for (var i = 0; i < animations.length; i++) {
+      ((index) => {
+        setTimeout(_ => {
           let animation = animations[index];
           let currentStateInStates = statesText.replace(animation, `<b>${animation}</b>`);
-          $state.text(animation);                
+          $state.text(animation);
           $states.html(currentStateInStates);
-          agent.play(animation, undefined, doneCallback.bind(null, animation));  
-        }, index*8000);
-      })(i);        
+          agent.play(animation, undefined, doneCallback.bind(null, animation));
+        }, index * 8000);
+      })(i);
     }
   }
-  
-  const agentSpeaking = () => {
-    const animations = agent.animations();    
-    agent.moveTo(170,(window.innerHeight || document.body.clientHeight)-113);
-    
 
-    setTimeout(animate.bind(null, agent, animations), 8000);        
-  
-    setTimeout(function() {
+  const agentSpeaking = () => {
+    const animations = agent.animations();
+    agent.moveTo(170, (window.innerHeight || document.body.clientHeight) - 113);
+
+
+    setTimeout(animate.bind(null, agent, animations), 8000);
+
+    setTimeout(function () {
       agent.speak("hmmm...");
-      setTimeout(function() {
+      setTimeout(function () {
         agent.speak("Looks like you're trying to explore things about Jerome?");
-      },1000)
-    },1000)  
+      }, 1000)
+    }, 1000)
   }
-  const openMenu = () =>{
+  const openMenu = () => {
     $('#menu').addClass('opened');
     let clippyBoi = document.getElementsByClassName('clippy')[0];
     let clippyBoiSays = document.getElementsByClassName('clippy-balloon')[0];
-   
-    if(!agentSpeaked) agentSpeaking();
+
+    if (!agentSpeaked) agentSpeaking();
     agentSpeaked = true;
   }
-  const triggerMenu = () =>{
-    if(menuOpened){ 
+  const triggerMenu = () => {
+    if (menuOpened) {
       closeMenu();
       menuOpened = false;
-    } else{
+    } else {
       openMenu();
       menuOpened = true;
     }
   }
-  $('.hamburger-trigger, .nav-content > a').click(function(){
+  $('.hamburger-trigger, .nav-content > a').click(function () {
     triggerMenu();
   })
-  
-  $('.main').on('click',function(e){
+
+  $('.main').on('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    if(menuOpened){
+    if (menuOpened) {
       triggerMenu();
     }
   })
@@ -115,14 +115,14 @@ $(function () {
     agent = clippy;
     let clippyBoi = document.getElementsByClassName('clippy')[0];
     let clippyBoiSays = document.getElementsByClassName('clippy-balloon')[0];
-  
+
     $('.nav-inner-wrapper').append($(clippyBoi));
     $('.nav-inner-wrapper').append($(clippyBoiSays));
     agent.show();
-    
-  
+
+
     // add stuff here:
-  }  
+  }
   clippy.load('Clippy', runClippy);
 });
 
