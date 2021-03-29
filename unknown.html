@@ -1,0 +1,77 @@
+<div id="tractions" class="extra-about-me-main-wrapper" style="background: #55aaaa; height: 2000px;">
+  <!-- fav books -->
+  <div class="spacer s2"></div>
+  <div class="spacer s0" id="trigger"></div>
+  <div class="extra-about-me-wrapper" data-scrollmagic-pin-spacer="" class="scrollmagic-pin-spacer"
+    style="top: 15px; left: 15px; bottom: auto; right: auto; margin: 0px; display: block; position: relative; box-sizing: content-box; min-height: 217px; height: auto; padding-top: 0px; padding-bottom: 500px;">
+    <div id="target"
+      style="position: relative; margin: auto; top: 0px; left: 0px; bottom: auto; right: auto; box-sizing: border-box; width: 100%;">
+
+      <div class="plane error box">
+        <div class="title">Some tractions
+          <button class="close-button">X</button>
+        </div>
+        <div class="message"><img src="https://win98icons.alexmeub.com/icons/png/check-0.png" />An error
+          has occurred while trying to display an error message.</div>
+        <button class="ok"> <span>OK</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="spacer s2"></div>
+
+</div>
+<script>
+  $(function () {
+    // var flightpath = {
+    //     entry : {
+    //         curviness: 1.25,
+    //         autoRotate: true,
+    //         values: [
+    //                 {x: 100,	y: -20},
+    //                 {x: 300,	y: 10}
+    //             ]
+    //     },
+    //     looping : {
+    //         curviness: 1.25,
+    //         autoRotate: true,
+    //         values: [
+    //                 {x: 510,	y: 60},
+    //                 {x: 620,	y: -60},
+    //                 {x: 500,	y: -100},
+    //                 {x: 380,	y: 20},
+    //                 {x: 500,	y: 60},
+    //                 {x: 580,	y: 20},
+    //                 {x: 620,	y: 15}
+    //             ]
+    //     },
+    //     leave : {
+    //         curviness: 1.25,
+    //         autoRotate: true,
+    //         values: [
+    //                 {x: 660,	y: 20},
+    //                 {x: 800,	y: 130},
+    //                 {x: $(window).width() + 300,	y: -100},
+    //             ]
+    //     }
+    // };
+    // // init controller
+    // var controller = new ScrollMagic.Controller();
+
+    // // create tween
+    // var tween = new TimelineMax()
+    //     .add(TweenMax.to($(".plane"), 1.2, {css:{bezier:flightpath.entry}, ease:Power1.easeInOut}))
+    //     .add(TweenMax.to($(".plane"), 2, {css:{bezier:flightpath.looping}, ease:Power1.easeInOut}))
+    //     .add(TweenMax.to($(".plane"), 1, {css:{bezier:flightpath.leave}, ease:Power1.easeInOut}));
+
+    // // build scene
+    // var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 100})
+    //                 .setPin("#target")
+    //                 .setTween(tween)
+    //                 .addIndicators() // add indicators (requires plugin)
+    //                 .addTo(controller);
+  })
+</script>
+<script type="text/javascript" src="http://scrollmagic.io/assets/js/lib/greensock/TweenMax.min.js"></script>
+<script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>
+<script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<!-- <script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script> -->

@@ -10,7 +10,7 @@ html {
   box-sizing: border-box;
 }
 :root {
-  cursor: url(https://i.imgur.com/g7rRv2N.png), default;
+  /* cursor: url(https://i.imgur.com/g7rRv2N.png), default; */
 }
 
 body {
@@ -201,7 +201,7 @@ polygon {
 }
 
 #cursor-custom {
-  z-index: 1000;
+  /* z-index: 1000;
   height: 40px;
   width: 40px;
   pointer-events: none;
@@ -210,7 +210,7 @@ polygon {
   border-radius: 50%;
   box-shadow: 0 0 10px #e2dfdfed, 0 0 20px #e2dfdfed, 0 0 30px #e2dfdfed,
     0 0 40px #e2dfdfed, 0 0 70px #e2dfdfed, 0 0 80px #e2dfdfed,
-    0 0 100px #e2dfdfed, 0 0 150px #e2dfdfed;
+    0 0 100px #e2dfdfed, 0 0 150px #e2dfdfed; */
 }
 
 button {
@@ -356,6 +356,8 @@ button {
 .about-me p {
   text-align: left;
   line-height: 18px;
+  margin-block-start: 1.1em;
+  margin-block-end: 1.1em;
 }
 
 .about-me .continue {
@@ -394,7 +396,7 @@ button {
 
 .tech-stuff {
   padding: 40px 10px;
-
+  width: 90%;
   margin: auto;
   max-width: 570px;
   background: white;
@@ -405,14 +407,11 @@ button {
   letter-spacing: 0.101rem;
   text-align: left;
   text-transform: uppercase;
-  text-shadow: -1px 0 #000, 0 -1px #000, 1px 0 #000, 0 1px #000, 1px 1px #000,
-    -1px -1px #000, -1px 1px #000, 1px -1px #000,
-    calc(-0.6 * var(--mouse-shadow)) calc(0.6 * var(--mouse-shadow)) #000;
   font-size: 50px;
   text-transform: uppercase;
   text-shadow: -2px 0 #000, 0 -2px #000, 2px 0 #000, 0 2px #000, 2px 2px #000,
-    -2px -2px #000, -2px 2px #000, 2px -2px #000,
-    calc(-1 * var(--mouse-shadow)) var(--mouse-shadow) #000;
+    -2px -2px #e02020, -2px 2px #3a0505, 2px -2px #000,
+    calc(1 * var(--mouse-shadow)) var(--mouse-shadow) #ff9595;
   color: white;
   margin: auto;
   text-align: center;
