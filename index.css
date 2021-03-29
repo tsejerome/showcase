@@ -346,13 +346,6 @@ button {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .about-me .msg {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
 .about-me p {
   text-align: left;
   line-height: 18px;
@@ -396,7 +389,6 @@ button {
 
 .tech-stuff {
   padding: 40px 10px;
-  width: 90%;
   margin: auto;
   max-width: 570px;
   background: white;
@@ -420,8 +412,23 @@ button {
 ul.extra-list-lol div {
   margin-top: 10px;
   font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: -2px 0 #000, 0 -2px #000, 2px 0 #000, 0 2px #000, 2px 2px #000,
+    -2px -2px #e02020, -2px 2px #3a0505, 2px -2px #000,
+    calc(1 * var(--mouse-shadow)) var(--mouse-shadow) #fff;
+  line-height: 1.16;
+  --mouse-shadow: 4.29833px;
+  letter-spacing: 0.101rem;
+  color: white;
 }
 
+ul.extra-list-lol li {
+  list-style: none;
+}
+
+ul.extra-list-lol {
+  padding-left: 0px;
+}
 #menu {
   position: fixed;
   top: 0;
@@ -503,4 +510,18 @@ ul.extra-list-lol div {
 
 .template {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .about-me .msg {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .tech-stuff {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .tech-stuff h1 {
+    text-align: left;
+  }
 }
