@@ -566,6 +566,12 @@ ul.extra-list-lol {
     padding-left: 12px;
     padding-right: 12px;
   }
+
+  .about-me p {
+    margin-block-start: 1.3em;
+    margin-block-end: 1.3em;
+  }
+
   .tech-stuff {
     margin-left: 12px;
     margin-right: 12px;
