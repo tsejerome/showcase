@@ -2,6 +2,28 @@ html {
   background: #000;
 }
 
+@font-face {
+  font-family: "CircularStd-Book";
+  src: url("https://jupitrr.com/_next/static/media/CircularStd-Book.9048137056e4347dbbd5cb532ecd395a.otf");
+}
+
+@font-face {
+  font-family: "CircularStd-Black-Italic";
+  src: url("../fonts/CircularStd-BlackItalic.otf");
+}
+
+@font-face {
+  font-family: "CircularStd-Black";
+  src: url("../fonts/CircularStd-Black.otf");
+}
+
+@font-face {
+  font-family: "CircularStd-Bold";
+  src: url("https://jupitrr.com/_next/static/media/CircularStd-Bold.5c4514a8399ec0064b9b1accdb262833.otf");
+}
+html {
+  font-family: "CircularStd-Book";
+}
 *,
 *:before,
 *:after {
@@ -386,7 +408,9 @@ button {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-
+.tech-stuff p a {
+  display: inline-block;
+}
 .tech-stuff {
   padding: 40px 10px;
   margin: auto;
