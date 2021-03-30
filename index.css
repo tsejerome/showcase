@@ -22,8 +22,30 @@ html {
   src: url("https://jupitrr.com/_next/static/media/CircularStd-Bold.5c4514a8399ec0064b9b1accdb262833.otf");
 }
 html {
-  font-family: "CircularStd-Book";
+  font-family: CircularStd-Book;
 }
+
+h1,
+h2,
+h3 {
+  font-family: CircularStd-Black, sans-serif;
+}
+
+h4,
+h5,
+h6,
+.conversion {
+  font-family: CircularStd-Bold, sans-serif;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: CircularStd-Book, sans-serif;
+}
+
 *,
 *:before,
 *:after {
