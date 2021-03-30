@@ -433,6 +433,9 @@ button {
 .tech-stuff p a {
   display: inline-block;
 }
+.tech-stuff p {
+  margin-bottom: 20px;
+}
 .tech-stuff {
   padding: 40px 10px;
   margin: auto;
@@ -566,8 +569,12 @@ ul.extra-list-lol {
   .tech-stuff {
     margin-left: 12px;
     margin-right: 12px;
+    max-width: unset;
   }
   .tech-stuff h1 {
     text-align: left;
+  }
+  .social-btns {
+    max-width: 500px;
   }
 }
