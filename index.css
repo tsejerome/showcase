@@ -28,14 +28,14 @@ html {
 h1,
 h2,
 h3 {
-  font-family: CircularStd-Black, sans-serif;
+  font-family: CircularStd-Black, monospace, sans-serif;
 }
 
 h4,
 h5,
 h6,
 .conversion {
-  font-family: CircularStd-Bold, sans-serif;
+  font-family: CircularStd-Bold, monospace, sans-serif;
 }
 
 button,
