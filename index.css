@@ -83,7 +83,7 @@ body {
   font-family: "Yellowtail", cursive;
   font-size: 7em;
   margin-right: -8em;
-  position: absolute;
+  position: relative;
   text-shadow: 0 0 1px #d100b1, 0 -3px 3px rgba(255, 255, 255, 0.8),
     0 3px 3px rgba(0, 0, 0, 0.5), 0 0 15px #d100b1,
     0 0 45px rgba(209, 0, 177, 0.8);
@@ -92,7 +92,7 @@ body {
   text-transform: none;
   -webkit-transform: skew(-10deg) rotate(-10deg);
   transform: skew(-10deg) rotate(-10deg);
-  top: 100px;
+  margin-top: -2.2em;
   width: 100%;
   z-index: 11;
 }
@@ -331,18 +331,16 @@ button {
 }
 
 .about-me.container {
-  display: flex;
   align-items: center;
   width: 100%;
-  height: 100%;
   padding: 20px 0px;
 }
 
 .about-me .msg {
   padding-left: 100px;
   padding-right: 100px;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   width: 100%;
 }
 
@@ -403,7 +401,7 @@ button {
   text-transform: uppercase;
   text-shadow: -2px 0 #000, 0 -2px #000, 2px 0 #000, 0 2px #000, 2px 2px #000,
     -2px -2px #e02020, -2px 2px #3a0505, 2px -2px #000,
-    calc(1 * var(--mouse-shadow)) var(--mouse-shadow) #ff9595;
+    calc(1 * var(--mouse-shadow)) var(--mouse-shadow) #ff0c0c;
   color: white;
   margin: auto;
   text-align: center;
