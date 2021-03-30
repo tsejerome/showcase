@@ -92,7 +92,7 @@ body {
   text-transform: none;
   -webkit-transform: skew(-10deg) rotate(-10deg);
   transform: skew(-10deg) rotate(-10deg);
-  margin-top: -2.2em;
+  margin-top: -2.1em;
   width: 100%;
   z-index: 11;
 }
