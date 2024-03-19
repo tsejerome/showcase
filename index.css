@@ -83,8 +83,9 @@ body {
       rgba(0, 0, 0, 0.8) 80%,
       #000000 90%
     ),
-    url(https://i.pinimg.com/originals/22/9c/df/229cdfa5921dc76922ff7a7a3a447dc7.jpg);
+    url(https://w.wallhaven.cc/full/6q/wallhaven-6q61ql.jpg);
   background-size: cover;
+  background-position: bottom;
   height: 35em;
   padding-top: 60px;
   overflow: hidden;
