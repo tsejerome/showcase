@@ -4,22 +4,22 @@ html {
 
 @font-face {
   font-family: "CircularStd-Book";
-  src: url("https://jupitrr.com/_next/static/media/CircularStd-Book.9048137056e4347dbbd5cb532ecd395a.otf");
+  src: url("https://jupitrr-admin.s3.ap-southeast-1.amazonaws.com/jerome/fonts/CircularStd-Book.otf");
 }
 
 @font-face {
   font-family: "CircularStd-Black-Italic";
-  src: url("https://jupitrr.com/_next/static/media/CircularStd-BlackItalic.e1f3943738ef431efb3e070f4e06436a.otf");
+  src: url("https://jupitrr-admin.s3.ap-southeast-1.amazonaws.com/jerome/fonts/CircularStd-BlackItalic.otf");
 }
 
 @font-face {
   font-family: "CircularStd-Black";
-  src: url("https://jupitrr.com/_next/static/media/CircularStd-Black.757b8ac8efa71be3fcd07e462e021a1b.otf");
+  src: url("https://jupitrr-admin.s3.ap-southeast-1.amazonaws.com/jerome/fonts/CircularStd-Black.otf");
 }
 
 @font-face {
   font-family: "CircularStd-Bold";
-  src: url("https://jupitrr.com/_next/static/media/CircularStd-Bold.5c4514a8399ec0064b9b1accdb262833.otf");
+  src: url("https://jupitrr-admin.s3.ap-southeast-1.amazonaws.com/jerome/fonts/CircularStd-Bold.otf");
 }
 html {
   font-family: CircularStd-Book;
@@ -425,7 +425,8 @@ button {
 
 .tech-stuff-wrapper {
   background-color: #000;
-  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v1/yJ/r/TCIyZGTrsjX.jpg);
+  background-size: contain;
+  background-image: url(https://wallpapers.com/images/hd/star-space-2000-x-1125-2aviccf1r71gqw5b.jpg);
   background-repeat: repeat;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -584,4 +585,8 @@ ul.extra-list-lol {
   .social-btns {
     max-width: 500px;
   }
+}
+
+* {
+  cursor: url(https://i.imgur.com/6CmdL1l.png), auto;
 }
