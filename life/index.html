@@ -130,8 +130,8 @@
 
     .timeline-header {
       display: grid;
-      grid-template-columns: 56px 108px 1fr;
-      gap: 0 24px;
+      grid-template-columns: 80px 1fr;
+      gap: 0 32px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
       margin-bottom: 0;
@@ -147,8 +147,8 @@
 
     .timeline-row {
       display: grid;
-      grid-template-columns: 56px 108px 1fr;
-      gap: 0 24px;
+      grid-template-columns: 80px 1fr;
+      gap: 0 32px;
       border-bottom: 1px solid var(--border);
       padding: 11px 0;
       transition: background 0.1s;
@@ -170,18 +170,23 @@
     }
 
     .row-year {
+      display: flex;
+      flex-direction: column;
       font-size: 13px;
       color: var(--muted);
       font-weight: 400;
       white-space: nowrap;
-      padding-top: 1px;
+      padding-top: 2px;
       line-height: 1.5;
     }
 
-    .row-phase {
-      display: flex;
-      align-items: flex-start;
-      padding-top: 1px;
+    .row-year-phase {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
     }
 
     .phase-tag {
@@ -248,12 +253,9 @@
     @media (max-width: 520px) {
       .timeline-header,
       .timeline-row {
-        grid-template-columns: 44px 1fr;
-        gap: 0 20px;
+        grid-template-columns: 64px 1fr;
+        gap: 0 16px;
       }
-
-      .timeline-header span:nth-child(2),
-      .row-phase { display: none; }
 
       .row-year { font-size: 12px; }
       .row-event { font-size: 13px; }
@@ -294,7 +296,6 @@
 
     <div class="timeline-header">
       <span>Year</span>
-      <span>Phase</span>
       <span>Event</span>
     </div>
 
@@ -383,13 +384,15 @@
         const isFirst = !seenYears.has(entry.year);
         seenYears.add(entry.year);
         const yearLabel = isFirst ? (entry.yearLabel || entry.year) : '';
+        const phaseHTML = isFirst
+          ? `<div class="row-year-phase phase-tag ${entry.color}">${entry.phase}</div>`
+          : '';
         const eventHTML = entry.link
           ? `<a href="${entry.link}" target="_blank">${entry.event}</a>`
           : entry.event;
         return `
       <div class="timeline-row${isFirst ? ' year-start' : ''}" data-phase="${entry.phase}" data-year="${entry.year}">
-        <div class="row-year">${yearLabel}</div>
-        <div class="row-phase"><span class="phase-tag ${entry.color}">${entry.tag}</span></div>
+        <div class="row-year">${yearLabel}${phaseHTML}</div>
         <div class="row-event">${eventHTML}</div>
       </div>`;
       }).join('');
