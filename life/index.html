@@ -22,6 +22,14 @@
       --link-underline: #bbb;
     }
 
+    html.dark {
+      --bg: #111;
+      --text: #f0f0ee;
+      --muted: #666;
+      --border: #2a2a2a;
+      --link-underline: #444;
+    }
+
     html {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
@@ -72,6 +80,21 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    .dark-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+      margin-left: 16px;
+    }
+    .dark-toggle:hover { color: var(--text); border-color: var(--text); }
+
     /* ── PAGE ── */
     .page {
       max-width: 680px;
@@ -93,6 +116,19 @@
       color: var(--muted);
       line-height: 1.6;
       max-width: 400px;
+    }
+
+    .stats-bar {
+      display: flex;
+      gap: 20px;
+      margin-top: 16px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .stats-bar span b {
+      font-weight: 600;
+      color: var(--text);
     }
 
     /* ── FILTER TABS ── */
@@ -274,6 +310,7 @@
       <li><a href="https://linkedin.com/in/tse-jerome" target="_blank">IN</a></li>
       <li><a href="https://jupitrr.com" target="_blank">Jupitrr</a></li>
       <li><a href="../#socials">Socials</a></li>
+      <li><button class="dark-toggle" id="dark-toggle">Dark</button></li>
     </ul>
   </nav>
 
@@ -281,6 +318,7 @@
     <div class="page-header">
       <h1>Life Timeline</h1>
       <p>Everything that happened — builder, founder, dropout-who-didn't-drop-out, and everything in between.</p>
+      <div class="stats-bar" id="stats-bar"></div>
     </div>
 
     <div class="filters">
@@ -398,6 +436,15 @@
       }).join('');
     }
 
+    // ── STATS BAR ────────────────────────────────────────────────────
+    const totalEvents = timeline.length;
+    const totalYears  = new Date().getFullYear() - 1997;
+    const totalPhases = new Set(timeline.map(e => e.phase)).size;
+    document.getElementById('stats-bar').innerHTML =
+      `<span><b>${totalEvents}</b> events</span>` +
+      `<span><b>${totalYears}</b> years</span>` +
+      `<span><b>${totalPhases}</b> phases</span>`;
+
     render('all');
 
     // ── FILTERS ──────────────────────────────────────────────────────
@@ -407,6 +454,14 @@
         btn.classList.add('active');
         render(btn.dataset.filter);
       });
+    });
+
+    // ── DARK MODE ────────────────────────────────────────────────────
+    const toggle = document.getElementById('dark-toggle');
+    const isDark = () => document.documentElement.classList.contains('dark');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      toggle.textContent = isDark() ? 'Light' : 'Dark';
     });
 
     // ── HK CLOCK ─────────────────────────────────────────────────────
