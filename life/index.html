@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jerome. — Life</title>
+  <link rel="icon" href="./src/favicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f9f9f7;
+      --text: #111;
+      --muted: #999;
+      --border: #e5e5e0;
+      --link-underline: #bbb;
+    }
+
+    html {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body { min-height: 100vh; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 120px;
+    }
+
+    .page-header { margin-bottom: 48px; }
+
+    .page-header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 400px;
+    }
+
+    /* ── FILTER TABS ── */
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .filter-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
+    }
+
+    /* ── TIMELINE LIST ── */
+    .timeline {
+      width: 100%;
+    }
+
+    .timeline-header {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 0 32px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+
+    .timeline-header span {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 0 32px;
+      border-bottom: 1px solid var(--border);
+      padding: 11px 0;
+      transition: background 0.1s;
+    }
+
+    .timeline-row:hover {
+      background: rgba(0,0,0,0.02);
+      margin: 0 -12px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .timeline-row.hidden { display: none; }
+
+    /* Year group separator — shows year once per group */
+    .timeline-row.year-start .row-year {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .row-year {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+      white-space: nowrap;
+      padding-top: 1px;
+      line-height: 1.5;
+    }
+
+    .row-event {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .row-event a {
+      color: var(--text);
+      text-decoration: underline;
+      text-decoration-color: var(--link-underline);
+      text-underline-offset: 2px;
+    }
+
+    .row-event a:hover {
+      text-decoration-color: var(--text);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-decoration-color: var(--link-underline);
+      text-underline-offset: 2px;
+    }
+
+    footer a:hover { color: var(--text); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 520px) {
+      .timeline-header,
+      .timeline-row {
+        grid-template-columns: 44px 1fr;
+        gap: 0 20px;
+      }
+
+      .row-year { font-size: 12px; }
+      .row-event { font-size: 13px; }
+
+      nav { padding: 0 16px; }
+      .page { padding: 36px 16px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="..">Jerome.</a>
+    <ul class="nav-links">
+      <li><a href="https://twitter.com/tsejerome" target="_blank">X</a></li>
+      <li><a href="https://linkedin.com/in/tse-jerome" target="_blank">IN</a></li>
+      <li><a href="https://jupitrr.com" target="_blank">Jupitrr</a></li>
+      <li><a href="../#socials">Socials</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+    <div class="page-header">
+      <h1>Life Timeline</h1>
+      <p>Everything that happened — builder, founder, dropout-who-didn't-drop-out, and everything in between.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Scale">Scale</button>
+      <button class="filter-btn" data-filter="Growth">Growth</button>
+      <button class="filter-btn" data-filter="Breakout">Breakout</button>
+      <button class="filter-btn" data-filter="Pivot">Pivot</button>
+      <button class="filter-btn" data-filter="Momentum">Momentum</button>
+      <button class="filter-btn" data-filter="Experiment">Experiment</button>
+      <button class="filter-btn" data-filter="Origins">Origins</button>
+    </div>
+
+    <div class="timeline-header">
+      <span>Year</span>
+      <span>Event</span>
+    </div>
+
+    <div class="timeline" id="timeline-body">
+
+      <!-- 2026 -->
+      <div class="timeline-row year-start" data-phase="Scale" data-year="2026">
+        <div class="row-year">2026</div>
+        <div class="row-event"><a href="https://jupitrr.com" target="_blank">Jupitrr</a> reaches 170k users</div>
+      </div>
+      <div class="timeline-row" data-phase="Scale" data-year="2026">
+        <div class="row-year"></div>
+        <div class="row-event">Scaling Video OS + AI agents</div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="timeline-row year-start" data-phase="Growth" data-year="2025">
+        <div class="row-year">2025</div>
+        <div class="row-event"><a href="https://jupitrr.com" target="_blank">Jupitrr</a> hits 100k users</div>
+      </div>
+      <div class="timeline-row" data-phase="Growth" data-year="2025">
+        <div class="row-year"></div>
+        <div class="row-event">Builds AI video agent</div>
+      </div>
+      <div class="timeline-row" data-phase="Growth" data-year="2025">
+        <div class="row-year"></div>
+        <div class="row-event">Scales with Claude Code</div>
+      </div>
+      <div class="timeline-row" data-phase="Growth" data-year="2025">
+        <div class="row-year"></div>
+        <div class="row-event">Product Hunt — Product of the Day</div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="timeline-row year-start" data-phase="Growth" data-year="2024">
+        <div class="row-year">2024</div>
+        <div class="row-event">Early user of Cursor + Devin</div>
+      </div>
+      <div class="timeline-row" data-phase="Growth" data-year="2024">
+        <div class="row-year"></div>
+        <div class="row-event">SF trip — meets YC founders</div>
+      </div>
+      <div class="timeline-row" data-phase="Growth" data-year="2024">
+        <div class="row-year"></div>
+        <div class="row-event">Product Hunt — Product of the Week + Day</div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="timeline-row year-start" data-phase="Breakout" data-year="2023">
+        <div class="row-year">2023</div>
+        <div class="row-event">AppSumo deal generates $100k+ overnight</div>
+      </div>
+      <div class="timeline-row" data-phase="Breakout" data-year="2023">
+        <div class="row-year"></div>
+        <div class="row-event">Product Hunt — Product of the Day (2×)</div>
+      </div>
+      <div class="timeline-row" data-phase="Breakout" data-year="2023">
+        <div class="row-year"></div>
+        <div class="row-event">Starts going to the gym</div>
+      </div>
+
+      <!-- 2022 -->
+      <div class="timeline-row year-start" data-phase="Scale" data-year="2022">
+        <div class="row-year">2022</div>
+        <div class="row-event"><a href="https://freehunter.io" target="_blank">Freehunter</a> becomes passive income</div>
+      </div>
+      <div class="timeline-row" data-phase="Scale" data-year="2022">
+        <div class="row-year"></div>
+        <div class="row-event">Burnout — slower life</div>
+      </div>
+      <div class="timeline-row" data-phase="Scale" data-year="2022">
+        <div class="row-year"></div>
+        <div class="row-event">Continues building <a href="https://jupitrr.com" target="_blank">Jupitrr</a></div>
+      </div>
+
+      <!-- 2021 -->
+      <div class="timeline-row year-start" data-phase="Pivot" data-year="2021">
+        <div class="row-year">2021</div>
+        <div class="row-event">Graduates from <a href="https://www.hku.hk" target="_blank">The University of Hong Kong</a></div>
+      </div>
+      <div class="timeline-row" data-phase="Pivot" data-year="2021">
+        <div class="row-year"></div>
+        <div class="row-event">Moves to Canada</div>
+      </div>
+      <div class="timeline-row" data-phase="Pivot" data-year="2021">
+        <div class="row-year"></div>
+        <div class="row-event">Shuts down the team</div>
+      </div>
+      <div class="timeline-row" data-phase="Pivot" data-year="2021">
+        <div class="row-year"></div>
+        <div class="row-event">Starts <a href="https://jupitrr.com" target="_blank">Jupitrr</a></div>
+      </div>
+
+      <!-- 2020 -->
+      <div class="timeline-row year-start" data-phase="Scale" data-year="2020">
+        <div class="row-year">2020</div>
+        <div class="row-event"><a href="https://freehunter.io" target="_blank">Freehunter</a> hits 100k users</div>
+      </div>
+      <div class="timeline-row" data-phase="Scale" data-year="2020">
+        <div class="row-year"></div>
+        <div class="row-event">Continues growing through the pandemic</div>
+      </div>
+
+      <!-- 2019 -->
+      <div class="timeline-row year-start" data-phase="Momentum" data-year="2019">
+        <div class="row-year">2019</div>
+        <div class="row-event">Named 30 Under 30 Hong Kong</div>
+      </div>
+      <div class="timeline-row" data-phase="Momentum" data-year="2019">
+        <div class="row-year"></div>
+        <div class="row-event">SEO expert — widely known in the industry</div>
+      </div>
+      <div class="timeline-row" data-phase="Momentum" data-year="2019">
+        <div class="row-year"></div>
+        <div class="row-event">10+ employees — rents an office</div>
+      </div>
+
+      <!-- 2018 -->
+      <div class="timeline-row year-start" data-phase="Momentum" data-year="2018">
+        <div class="row-year">2018</div>
+        <div class="row-event">Raises angel funding</div>
+      </div>
+      <div class="timeline-row" data-phase="Momentum" data-year="2018">
+        <div class="row-year"></div>
+        <div class="row-event">Guest lecturer at <a href="https://www.hku.hk" target="_blank">HKU</a></div>
+      </div>
+      <div class="timeline-row" data-phase="Momentum" data-year="2018">
+        <div class="row-year"></div>
+        <div class="row-event">Raises from listed company HR directors</div>
+      </div>
+
+      <!-- 2017 -->
+      <div class="timeline-row year-start" data-phase="Experiment" data-year="2017">
+        <div class="row-year">2017</div>
+        <div class="row-event">Takes a gap semester</div>
+      </div>
+      <div class="timeline-row" data-phase="Experiment" data-year="2017">
+        <div class="row-year"></div>
+        <div class="row-event">Joins a hackerspace</div>
+      </div>
+      <div class="timeline-row" data-phase="Experiment" data-year="2017">
+        <div class="row-year"></div>
+        <div class="row-event">Multiple cofounders — startup fails (no funding model)</div>
+      </div>
+
+      <!-- 2016 -->
+      <div class="timeline-row year-start" data-phase="Experiment" data-year="2016">
+        <div class="row-year">2016</div>
+        <div class="row-event">Receives offers from Wingz + Wells Fargo</div>
+      </div>
+      <div class="timeline-row" data-phase="Experiment" data-year="2016">
+        <div class="row-year"></div>
+        <div class="row-event">Joins a Shanghai startup instead — it shuts down</div>
+      </div>
+
+      <!-- 2015 -->
+      <div class="timeline-row year-start" data-phase="Origins" data-year="2015">
+        <div class="row-year">2015</div>
+        <div class="row-event">CNY toy business — $4k raised, breaks even</div>
+      </div>
+      <div class="timeline-row" data-phase="Origins" data-year="2015">
+        <div class="row-year"></div>
+        <div class="row-event">Enters <a href="https://www.hku.hk" target="_blank">The University of Hong Kong</a></div>
+      </div>
+
+      <!-- 2014 -->
+      <div class="timeline-row year-start" data-phase="Origins" data-year="2014">
+        <div class="row-year">2014</div>
+        <div class="row-event">Achieves Piano Grade 8</div>
+      </div>
+
+      <!-- 2012 -->
+      <div class="timeline-row year-start" data-phase="Origins" data-year="2012">
+        <div class="row-year">2012</div>
+        <div class="row-event">Builds first PHP website — fails, but ships it</div>
+      </div>
+
+      <!-- 2010 -->
+      <div class="timeline-row year-start" data-phase="Origins" data-year="2010">
+        <div class="row-year">2010</div>
+        <div class="row-event">Plays Minecraft beta</div>
+      </div>
+      <div class="timeline-row" data-phase="Origins" data-year="2010">
+        <div class="row-year"></div>
+        <div class="row-event">Runs own game server (Hamachi + Bukkit)</div>
+      </div>
+
+      <!-- 2009 -->
+      <div class="timeline-row year-start" data-phase="Origins" data-year="2009">
+        <div class="row-year">2009</div>
+        <div class="row-event">Admin of a major CS 1.6 server in Hong Kong</div>
+      </div>
+
+      <!-- 2004 -->
+      <div class="timeline-row year-start" data-phase="Origins" data-year="2004">
+        <div class="row-year">2004–07</div>
+        <div class="row-event">Learns piano</div>
+      </div>
+
+      <!-- 1997 -->
+      <div class="timeline-row year-start" data-phase="Origins" data-year="1997">
+        <div class="row-year">1997</div>
+        <div class="row-event">Born in Canada</div>
+      </div>
+
+    </div><!-- /timeline -->
+  </div><!-- /page -->
+
+  <footer>
+    <span>© 2025 <a href="..">Jerome Tse</a></span>
+    <span id="hk-time"></span>
+  </footer>
+
+  <script>
+    // Filter
+    const btns = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('.timeline-row');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        // Track which years are visible to re-show year label on first visible row
+        const yearFirstVisible = {};
+
+        rows.forEach(row => {
+          const match = filter === 'all' || row.dataset.phase === filter;
+          if (match) {
+            row.classList.remove('hidden');
+            const y = row.dataset.year;
+            if (!yearFirstVisible[y]) {
+              yearFirstVisible[y] = row;
+            }
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+
+        // Ensure year label shows on first visible row in each year group
+        rows.forEach(row => {
+          if (!row.classList.contains('hidden')) {
+            const y = row.dataset.year;
+            const yearEl = row.querySelector('.row-year');
+            if (row === yearFirstVisible[y]) {
+              yearEl.textContent = y === '2004' ? '2004–07' : y;
+              row.classList.add('year-start');
+            } else {
+              yearEl.textContent = '';
+              row.classList.remove('year-start');
+            }
+          }
+        });
+      });
+    });
+
+    // Live HK clock
+    function updateHKTime() {
+      const hk = new Intl.DateTimeFormat('en-HK', {
+        timeZone: 'Asia/Hong_Kong',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      }).format(new Date());
+      document.getElementById('hk-time').textContent = 'HK Time: ' + hk;
+    }
+    updateHKTime();
+    setInterval(updateHKTime, 1000);
+  </script>
+
+</body>
+</html>
