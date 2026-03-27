@@ -24,10 +24,31 @@
 
     html.dark {
       --bg: #111;
-      --text: #f0f0ee;
-      --muted: #666;
-      --border: #2a2a2a;
+      --text: #e8e8e6;
+      --muted: #555;
+      --border: #252525;
       --link-underline: #444;
+    }
+
+    /* muted tag colors for dark mode */
+    html.dark .t-green  { color: #68b088; }
+    html.dark .t-blue   { color: #6ba3d6; }
+    html.dark .t-amber  { color: #c49a4a; }
+    html.dark .t-purple { color: #9f82d4; }
+    html.dark .t-red    { color: #c47070; }
+    html.dark .t-gray   { color: #666; }
+    html.dark .t-teal   { color: #5aabac; }
+    html.dark .t-pink   { color: #c47094; }
+    html.dark .t-indigo { color: #7b8fd4; }
+
+    html.dark .filter-btn.active {
+      background: #e8e8e6;
+      border-color: #e8e8e6;
+      color: #111;
+    }
+
+    html.dark .timeline-row:hover {
+      background: rgba(255,255,255,0.03);
     }
 
     html {
@@ -181,12 +202,39 @@
       color: var(--muted);
     }
 
+    /* Year group header — sits above its events, not inside a row */
+    .year-group-header {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 32px;
+      padding: 18px 0 4px;
+    }
+
+    .year-group-header.hidden { display: none; }
+
+    .row-year {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    .row-year-phase {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
     .timeline-row {
       display: grid;
       grid-template-columns: 80px 1fr;
       gap: 0 32px;
       border-bottom: 1px solid var(--border);
-      padding: 11px 0;
+      padding: 9px 0;
       transition: background 0.1s;
     }
 
@@ -198,32 +246,6 @@
     }
 
     .timeline-row.hidden { display: none; }
-
-    /* Year group separator — shows year once per group */
-    .timeline-row.year-start .row-year {
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .row-year {
-      display: flex;
-      flex-direction: column;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 400;
-      white-space: nowrap;
-      padding-top: 2px;
-      line-height: 1.5;
-    }
-
-    .row-year-phase {
-      display: block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
 
     .phase-tag {
       display: inline-block;
@@ -421,16 +443,20 @@
       body.innerHTML = visible.map(entry => {
         const isFirst = !seenYears.has(entry.year);
         seenYears.add(entry.year);
-        const yearLabel = isFirst ? (entry.yearLabel || entry.year) : '';
-        const phaseHTML = isFirst
-          ? `<div class="row-year-phase phase-tag ${entry.color}">${entry.phase}</div>`
-          : '';
         const eventHTML = entry.link
           ? `<a href="${entry.link}" target="_blank">${entry.event}</a>`
           : entry.event;
-        return `
-      <div class="timeline-row${isFirst ? ' year-start' : ''}" data-phase="${entry.phase}" data-year="${entry.year}">
-        <div class="row-year">${yearLabel}${phaseHTML}</div>
+        const header = isFirst ? `
+      <div class="year-group-header" data-phase="${entry.phase}">
+        <div class="row-year">
+          ${entry.yearLabel || entry.year}
+          <span class="row-year-phase phase-tag ${entry.color}">${entry.phase}</span>
+        </div>
+        <div></div>
+      </div>` : '';
+        return header + `
+      <div class="timeline-row" data-phase="${entry.phase}" data-year="${entry.year}">
+        <div></div>
         <div class="row-event">${eventHTML}</div>
       </div>`;
       }).join('');
