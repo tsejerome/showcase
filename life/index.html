@@ -434,6 +434,17 @@
       { year: 1997, phase: 'Origins',    tag: 'Born',      color: 't-gray',   event: 'Born in Canada' },
     ];
 
+    // ── PHASE COLOR MAP ──────────────────────────────────────────────
+    const phaseColor = {
+      Scale:      't-green',
+      Growth:     't-blue',
+      Breakout:   't-amber',
+      Pivot:      't-purple',
+      Momentum:   't-red',
+      Experiment: 't-gray',
+      Origins:    't-indigo',
+    };
+
     // ── RENDER ───────────────────────────────────────────────────────
     function render(filter) {
       const body = document.getElementById('timeline-body');
@@ -450,7 +461,7 @@
       <div class="year-group-header" data-phase="${entry.phase}">
         <div class="row-year">
           ${entry.yearLabel || entry.year}
-          <span class="row-year-phase phase-tag ${entry.color}">${entry.phase}</span>
+          <span class="row-year-phase phase-tag ${phaseColor[entry.phase]}">${entry.phase}</span>
         </div>
         <div></div>
       </div>` : '';
