@@ -130,8 +130,8 @@
 
     .timeline-header {
       display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 0 32px;
+      grid-template-columns: 56px 108px 1fr;
+      gap: 0 24px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
       margin-bottom: 0;
@@ -147,8 +147,8 @@
 
     .timeline-row {
       display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 0 32px;
+      grid-template-columns: 56px 108px 1fr;
+      gap: 0 24px;
       border-bottom: 1px solid var(--border);
       padding: 11px 0;
       transition: background 0.1s;
@@ -177,6 +177,32 @@
       padding-top: 1px;
       line-height: 1.5;
     }
+
+    .row-phase {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 1px;
+    }
+
+    .phase-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .phase-Scale    { border-color: #c3e6cb; color: #2d7a4f; background: #f0faf4; }
+    .phase-Growth   { border-color: #bee3f8; color: #2b6cb0; background: #ebf8ff; }
+    .phase-Breakout { border-color: #fbd38d; color: #b7791f; background: #fffaf0; }
+    .phase-Pivot    { border-color: #e9d8fd; color: #6b46c1; background: #faf5ff; }
+    .phase-Momentum { border-color: #fed7d7; color: #c53030; background: #fff5f5; }
+    .phase-Experiment { border-color: #e2e8f0; color: #4a5568; background: #f7fafc; }
+    .phase-Origins  { border-color: #e2e8f0; color: #718096; background: #f7fafc; }
 
     .row-event {
       font-size: 14px;
@@ -225,6 +251,9 @@
         gap: 0 20px;
       }
 
+      .timeline-header span:nth-child(2),
+      .row-phase { display: none; }
+
       .row-year { font-size: 12px; }
       .row-event { font-size: 13px; }
 
@@ -264,6 +293,7 @@
 
     <div class="timeline-header">
       <span>Year</span>
+      <span>Phase</span>
       <span>Event</span>
     </div>
 
@@ -272,200 +302,241 @@
       <!-- 2026 -->
       <div class="timeline-row year-start" data-phase="Scale" data-year="2026">
         <div class="row-year">2026</div>
+        <div class="row-phase"><span class="phase-tag phase-Scale">Scale</span></div>
         <div class="row-event"><a href="https://jupitrr.com" target="_blank">Jupitrr</a> reaches 170k users</div>
       </div>
       <div class="timeline-row" data-phase="Scale" data-year="2026">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Scaling Video OS + AI agents</div>
       </div>
 
       <!-- 2025 -->
       <div class="timeline-row year-start" data-phase="Growth" data-year="2025">
         <div class="row-year">2025</div>
+        <div class="row-phase"><span class="phase-tag phase-Growth">Growth</span></div>
         <div class="row-event"><a href="https://jupitrr.com" target="_blank">Jupitrr</a> hits 100k users</div>
       </div>
       <div class="timeline-row" data-phase="Growth" data-year="2025">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Builds AI video agent</div>
       </div>
       <div class="timeline-row" data-phase="Growth" data-year="2025">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Scales with Claude Code</div>
       </div>
       <div class="timeline-row" data-phase="Growth" data-year="2025">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Product Hunt — Product of the Day</div>
       </div>
 
       <!-- 2024 -->
       <div class="timeline-row year-start" data-phase="Growth" data-year="2024">
         <div class="row-year">2024</div>
+        <div class="row-phase"><span class="phase-tag phase-Growth">Growth</span></div>
         <div class="row-event">Early user of Cursor + Devin</div>
       </div>
       <div class="timeline-row" data-phase="Growth" data-year="2024">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">SF trip — meets YC founders</div>
       </div>
       <div class="timeline-row" data-phase="Growth" data-year="2024">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Product Hunt — Product of the Week + Day</div>
       </div>
 
       <!-- 2023 -->
       <div class="timeline-row year-start" data-phase="Breakout" data-year="2023">
         <div class="row-year">2023</div>
+        <div class="row-phase"><span class="phase-tag phase-Breakout">Breakout</span></div>
         <div class="row-event">AppSumo deal generates $100k+ overnight</div>
       </div>
       <div class="timeline-row" data-phase="Breakout" data-year="2023">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Product Hunt — Product of the Day (2×)</div>
       </div>
       <div class="timeline-row" data-phase="Breakout" data-year="2023">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Starts going to the gym</div>
       </div>
 
       <!-- 2022 -->
       <div class="timeline-row year-start" data-phase="Scale" data-year="2022">
         <div class="row-year">2022</div>
+        <div class="row-phase"><span class="phase-tag phase-Scale">Scale</span></div>
         <div class="row-event"><a href="https://freehunter.io" target="_blank">Freehunter</a> becomes passive income</div>
       </div>
       <div class="timeline-row" data-phase="Scale" data-year="2022">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Burnout — slower life</div>
       </div>
       <div class="timeline-row" data-phase="Scale" data-year="2022">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Continues building <a href="https://jupitrr.com" target="_blank">Jupitrr</a></div>
       </div>
 
       <!-- 2021 -->
       <div class="timeline-row year-start" data-phase="Pivot" data-year="2021">
         <div class="row-year">2021</div>
+        <div class="row-phase"><span class="phase-tag phase-Pivot">Pivot</span></div>
         <div class="row-event">Graduates from <a href="https://www.hku.hk" target="_blank">The University of Hong Kong</a></div>
       </div>
       <div class="timeline-row" data-phase="Pivot" data-year="2021">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Moves to Canada</div>
       </div>
       <div class="timeline-row" data-phase="Pivot" data-year="2021">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Shuts down the team</div>
       </div>
       <div class="timeline-row" data-phase="Pivot" data-year="2021">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Starts <a href="https://jupitrr.com" target="_blank">Jupitrr</a></div>
       </div>
 
       <!-- 2020 -->
       <div class="timeline-row year-start" data-phase="Scale" data-year="2020">
         <div class="row-year">2020</div>
+        <div class="row-phase"><span class="phase-tag phase-Scale">Scale</span></div>
         <div class="row-event"><a href="https://freehunter.io" target="_blank">Freehunter</a> hits 100k users</div>
       </div>
       <div class="timeline-row" data-phase="Scale" data-year="2020">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Continues growing through the pandemic</div>
       </div>
 
       <!-- 2019 -->
       <div class="timeline-row year-start" data-phase="Momentum" data-year="2019">
         <div class="row-year">2019</div>
+        <div class="row-phase"><span class="phase-tag phase-Momentum">Momentum</span></div>
         <div class="row-event">Named 30 Under 30 Hong Kong</div>
       </div>
       <div class="timeline-row" data-phase="Momentum" data-year="2019">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">SEO expert — widely known in the industry</div>
       </div>
       <div class="timeline-row" data-phase="Momentum" data-year="2019">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">10+ employees — rents an office</div>
       </div>
 
       <!-- 2018 -->
       <div class="timeline-row year-start" data-phase="Momentum" data-year="2018">
         <div class="row-year">2018</div>
+        <div class="row-phase"><span class="phase-tag phase-Momentum">Momentum</span></div>
         <div class="row-event">Raises angel funding</div>
       </div>
       <div class="timeline-row" data-phase="Momentum" data-year="2018">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Guest lecturer at <a href="https://www.hku.hk" target="_blank">HKU</a></div>
       </div>
       <div class="timeline-row" data-phase="Momentum" data-year="2018">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Raises from listed company HR directors</div>
       </div>
 
       <!-- 2017 -->
       <div class="timeline-row year-start" data-phase="Experiment" data-year="2017">
         <div class="row-year">2017</div>
+        <div class="row-phase"><span class="phase-tag phase-Experiment">Experiment</span></div>
         <div class="row-event">Takes a gap semester</div>
       </div>
       <div class="timeline-row" data-phase="Experiment" data-year="2017">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Joins a hackerspace</div>
       </div>
       <div class="timeline-row" data-phase="Experiment" data-year="2017">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Multiple cofounders — startup fails (no funding model)</div>
       </div>
 
       <!-- 2016 -->
       <div class="timeline-row year-start" data-phase="Experiment" data-year="2016">
         <div class="row-year">2016</div>
+        <div class="row-phase"><span class="phase-tag phase-Experiment">Experiment</span></div>
         <div class="row-event">Receives offers from Wingz + Wells Fargo</div>
       </div>
       <div class="timeline-row" data-phase="Experiment" data-year="2016">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Joins a Shanghai startup instead — it shuts down</div>
       </div>
 
       <!-- 2015 -->
       <div class="timeline-row year-start" data-phase="Origins" data-year="2015">
         <div class="row-year">2015</div>
+        <div class="row-phase"><span class="phase-tag phase-Origins">Origins</span></div>
         <div class="row-event">CNY toy business — $4k raised, breaks even</div>
       </div>
       <div class="timeline-row" data-phase="Origins" data-year="2015">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Enters <a href="https://www.hku.hk" target="_blank">The University of Hong Kong</a></div>
       </div>
 
       <!-- 2014 -->
       <div class="timeline-row year-start" data-phase="Origins" data-year="2014">
         <div class="row-year">2014</div>
+        <div class="row-phase"><span class="phase-tag phase-Origins">Origins</span></div>
         <div class="row-event">Achieves Piano Grade 8</div>
       </div>
 
       <!-- 2012 -->
       <div class="timeline-row year-start" data-phase="Origins" data-year="2012">
         <div class="row-year">2012</div>
+        <div class="row-phase"><span class="phase-tag phase-Origins">Origins</span></div>
         <div class="row-event">Builds first PHP website — fails, but ships it</div>
       </div>
 
       <!-- 2010 -->
       <div class="timeline-row year-start" data-phase="Origins" data-year="2010">
         <div class="row-year">2010</div>
+        <div class="row-phase"><span class="phase-tag phase-Origins">Origins</span></div>
         <div class="row-event">Plays Minecraft beta</div>
       </div>
       <div class="timeline-row" data-phase="Origins" data-year="2010">
         <div class="row-year"></div>
+        <div class="row-phase"></div>
         <div class="row-event">Runs own game server (Hamachi + Bukkit)</div>
       </div>
 
       <!-- 2009 -->
       <div class="timeline-row year-start" data-phase="Origins" data-year="2009">
         <div class="row-year">2009</div>
+        <div class="row-phase"><span class="phase-tag phase-Origins">Origins</span></div>
         <div class="row-event">Admin of a major CS 1.6 server in Hong Kong</div>
       </div>
 
       <!-- 2004 -->
       <div class="timeline-row year-start" data-phase="Origins" data-year="2004">
         <div class="row-year">2004–07</div>
+        <div class="row-phase"><span class="phase-tag phase-Origins">Origins</span></div>
         <div class="row-event">Learns piano</div>
       </div>
 
       <!-- 1997 -->
       <div class="timeline-row year-start" data-phase="Origins" data-year="1997">
         <div class="row-year">1997</div>
+        <div class="row-phase"><span class="phase-tag phase-Origins">Origins</span></div>
         <div class="row-event">Born in Canada</div>
       </div>
 
