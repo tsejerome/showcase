@@ -204,29 +204,32 @@
 
     /* Year group header — sits above its events, not inside a row */
     .year-group-header {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 0 20px;
-      padding: 18px 0 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      padding: 20px 0 6px;
+      font-size: 12px;
+      color: var(--muted);
     }
 
     .year-group-header.hidden { display: none; }
 
-    .row-year {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 400;
-      white-space: nowrap;
-      line-height: 1.4;
+    .year-num {
+      display: inline-block;
+      min-width: 32px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .year-sep {
+      color: var(--border);
+      font-size: 10px;
     }
 
     .row-year-phase {
-      display: block;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-top: 2px;
     }
 
     .timeline-row {
@@ -467,11 +470,9 @@
           : entry.event;
         const header = isFirst ? `
       <div class="year-group-header" data-phase="${entry.phase}">
-        <div class="row-year">
-          ${entry.yearLabel || entry.year}
-          <span class="row-year-phase phase-tag ${phaseColor[entry.phase]}">${entry.phase}</span>
-        </div>
-        <div></div>
+        <span class="year-num">${entry.yearLabel || entry.year}</span>
+        <span class="year-sep">•</span>
+        <span class="row-year-phase ${phaseColor[entry.phase]}">${entry.phase}</span>
       </div>` : '';
         return header + `
       <div class="timeline-row" data-phase="${entry.phase}" data-year="${entry.year}">
