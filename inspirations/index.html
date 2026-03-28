@@ -83,9 +83,40 @@
     .subtitle {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .tab-btn {
+      font-size: 13px;
+      font-family: inherit;
+      font-weight: 500;
+      color: var(--muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 8px 16px 9px;
+      cursor: pointer;
+      margin-bottom: -1px;
+      transition: color 0.1s;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      color: var(--text);
+      border-bottom-color: var(--text);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Cards */
     .person-card {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -121,6 +152,7 @@
       gap: 6px;
       flex-wrap: wrap;
       margin-top: 4px;
+      justify-content: flex-end;
     }
 
     .tag {
@@ -134,12 +166,16 @@
       color: var(--muted);
     }
 
-    .tag.lifestyle { background: #e8f5ee; color: #2d7a4f; }
-    .tag.business  { background: #e8f0fb; color: #2b6cb0; }
+    .tag.lifestyle  { background: #e8f5ee; color: #2d7a4f; }
+    .tag.business   { background: #e8f0fb; color: #2b6cb0; }
     .tag.philosophy { background: #f3eeff; color: #6b46c1; }
-    .tag.health    { background: #fde8f5; color: #97266d; }
-    .tag.writing   { background: #fff4e0; color: #b7791f; }
-    .tag.indie     { background: #e8faf9; color: #2c7a7b; }
+    .tag.health     { background: #fde8f5; color: #97266d; }
+    .tag.writing    { background: #fff4e0; color: #b7791f; }
+    .tag.indie      { background: #e8faf9; color: #2c7a7b; }
+    .tag.resilience { background: #fff0e8; color: #c05621; }
+    .tag.hope       { background: #ebf8ff; color: #2b6cb0; }
+    .tag.science    { background: #e8faf9; color: #2c7a7b; }
+    .tag.fiction    { background: #f3eeff; color: #6b46c1; }
 
     html.dark .tag.lifestyle  { background: #1a2e23; color: #68b088; }
     html.dark .tag.business   { background: #1a2535; color: #6ba3d6; }
@@ -147,6 +183,10 @@
     html.dark .tag.health     { background: #2e1a25; color: #c47094; }
     html.dark .tag.writing    { background: #2e2315; color: #c49a4a; }
     html.dark .tag.indie      { background: #152525; color: #5aabac; }
+    html.dark .tag.resilience { background: #2e1e10; color: #d4895a; }
+    html.dark .tag.hope       { background: #101e2e; color: #6ba3d6; }
+    html.dark .tag.science    { background: #152525; color: #5aabac; }
+    html.dark .tag.fiction    { background: #22183a; color: #9f82d4; }
 
     .person-quote {
       font-size: 13px;
@@ -190,13 +230,29 @@
     </div>
 
     <h1>Inspirations</h1>
-    <p class="subtitle">People whose thinking has shaped how I work and live.</p>
+    <p class="subtitle">People and stories that shaped how I think.</p>
 
-    <div id="cards"></div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="people">People</button>
+      <button class="tab-btn" data-tab="stories">Stories</button>
+    </div>
+
+    <div id="people" class="tab-panel active"></div>
+    <div id="stories" class="tab-panel"></div>
   </div>
 
   <script>
     const people = [
+      {
+        name: 'Alexis Ohanian',
+        handle: 'Reddit co-founder',
+        tags: ['business', 'resilience', 'writing'],
+        quote: 'Without Their Permission.',
+        takeaway: "His book was one of the things that pushed me to actually start. The core idea — that the internet lets anyone build something real without needing anyone's approval — hit hard at the right time. You don't need a VC, a big team, or a famous name. You just need to start.",
+        links: [
+          { label: 'withouttheirpermission.com', url: 'https://www.withouttheirpermission.com' },
+        ],
+      },
       {
         name: 'Pieter Levels',
         handle: '@levelsio',
@@ -221,29 +277,62 @@
       },
     ];
 
-    const tagClasses = {
-      indie: 'indie', lifestyle: 'lifestyle', health: 'health',
-      business: 'business', philosophy: 'philosophy', writing: 'writing',
-    };
+    const stories = [
+      {
+        name: 'Superman',
+        handle: 'DC Comics',
+        tags: ['resilience', 'hope'],
+        quote: 'You will give the people of Earth an ideal to strive towards.',
+        takeaway: "Superman carries more power than almost anyone — and more struggle. Losing his world, living between two identities, never fully belonging anywhere. But he channels all of that into being a source of hope for others rather than turning inward. A reminder that strength isn't just what you can do, it's what you choose to do with it.",
+        links: [],
+      },
+      {
+        name: 'Ryland Grace',
+        handle: 'Project Hail Mary — Andy Weir',
+        tags: ['resilience', 'science', 'fiction'],
+        quote: 'How did I end up here? One decision at a time.',
+        takeaway: "Grace is a regular person — a middle-school science teacher — who wakes up alone in space with no memory, tasked with saving humanity. What gets me is his approach: no drama, just iterate. Observe, hypothesize, test, adapt. He doesn't need to be a hero. He just keeps solving the next problem in front of him. That's the most honest depiction of how anything hard actually gets done.",
+        links: [
+          { label: 'Project Hail Mary', url: 'https://en.wikipedia.org/wiki/Project_Hail_Mary' },
+        ],
+      },
+    ];
 
-    document.getElementById('cards').innerHTML = people.map(p => `
-      <div class="person-card">
-        <div class="person-header">
-          <div>
-            <div class="person-name">${p.name}</div>
-            <div class="person-handle">${p.handle}</div>
+    const tagClasses = [
+      'lifestyle','business','philosophy','health','writing',
+      'indie','resilience','hope','science','fiction',
+    ].reduce((acc, t) => { acc[t] = t; return acc; }, {});
+
+    function renderCards(data, containerId) {
+      document.getElementById(containerId).innerHTML = data.map(p => `
+        <div class="person-card">
+          <div class="person-header">
+            <div>
+              <div class="person-name">${p.name}</div>
+              <div class="person-handle">${p.handle}</div>
+            </div>
+            <div class="person-tags">
+              ${p.tags.map(t => `<span class="tag ${tagClasses[t] || ''}">${t}</span>`).join('')}
+            </div>
           </div>
-          <div class="person-tags">
-            ${p.tags.map(t => `<span class="tag ${tagClasses[t] || ''}">${t}</span>`).join('')}
-          </div>
+          <div class="person-quote">"${p.quote}"</div>
+          <div class="person-takeaway">${p.takeaway}</div>
+          ${p.links.length ? `<div class="person-links">${p.links.map(l => `<a href="${l.url}" target="_blank">${l.label}</a>`).join('')}</div>` : ''}
         </div>
-        <div class="person-quote">"${p.quote}"</div>
-        <div class="person-takeaway">${p.takeaway}</div>
-        <div class="person-links">
-          ${p.links.map(l => `<a href="${l.url}" target="_blank">${l.label}</a>`).join('')}
-        </div>
-      </div>
-    `).join('');
+      `).join('');
+    }
+
+    renderCards(people, 'people');
+    renderCards(stories, 'stories');
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
 
     const toggle = document.getElementById('dark-toggle');
     const isDark = () => document.documentElement.classList.contains('dark');
