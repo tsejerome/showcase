@@ -187,8 +187,8 @@
 
     .timeline-header {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 0 32px;
+      grid-template-columns: 72px 1fr;
+      gap: 0 20px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
       margin-bottom: 0;
@@ -205,8 +205,8 @@
     /* Year group header — sits above its events, not inside a row */
     .year-group-header {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 0 32px;
+      grid-template-columns: 72px 1fr;
+      gap: 0 20px;
       padding: 18px 0 4px;
     }
 
@@ -231,8 +231,8 @@
 
     .timeline-row {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 0 32px;
+      grid-template-columns: 72px 1fr;
+      gap: 0 20px;
       border-bottom: 1px solid var(--border);
       padding: 9px 0;
       transition: background 0.1s;
@@ -375,10 +375,11 @@
     // color: t-green | t-blue | t-amber | t-purple | t-red | t-gray | t-teal | t-pink | t-indigo
     const timeline = [
       { year: 2026, phase: 'Scale',      tag: 'Milestone', color: 't-green',  event: 'Jupitrr reaches 170k users',                       link: 'https://jupitrr.com' },
+      { year: 2026, phase: 'Scale',      tag: 'AI',        color: 't-purple', event: 'Early user of OpenClaw' },
       { year: 2026, phase: 'Scale',      tag: 'AI',        color: 't-purple', event: 'Scaling Video OS + AI agents' },
 
       { year: 2025, phase: 'Growth',     tag: 'Milestone', color: 't-green',  event: 'Jupitrr hits 100k users',                          link: 'https://jupitrr.com' },
-      { year: 2025, phase: 'Growth',     tag: 'AI',        color: 't-purple', event: 'Builds AI video agent' },
+      { year: 2025, phase: 'Growth',     tag: 'AI',        color: 't-purple', event: 'Builds AI video agent Levio',                      link: 'https://jupitrr.com/levio' },
       { year: 2025, phase: 'Growth',     tag: 'Tooling',   color: 't-teal',   event: 'Scales with Claude Code' },
       { year: 2025, phase: 'Growth',     tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Day' },
 
@@ -387,37 +388,38 @@
       { year: 2024, phase: 'Growth',     tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Week + Day' },
 
       { year: 2023, phase: 'Breakout',   tag: 'Revenue',   color: 't-amber',  event: 'AppSumo deal generates $100k+ overnight' },
-      { year: 2023, phase: 'Breakout',   tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Day (2×)' },
+      { year: 2023, phase: 'Breakout',   tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Day' },
+      { year: 2023, phase: 'Breakout',   tag: 'Tooling',   color: 't-teal',   event: 'Early user of ChatGPT 3.5' },
       { year: 2023, phase: 'Breakout',   tag: 'Health',    color: 't-pink',   event: 'Starts going to the gym' },
 
-      { year: 2022, phase: 'Scale',      tag: 'Passive',   color: 't-green',  event: 'Freehunter becomes passive income',                link: 'https://freehunter.io' },
+      { year: 2022, phase: 'Scale',      tag: 'Passive',   color: 't-green',  event: 'Freehunter becomes passive income',                link: 'https://freehunter.hk' },
       { year: 2022, phase: 'Scale',      tag: 'Burnout',   color: 't-gray',   event: 'Burnout — slower life' },
       { year: 2022, phase: 'Scale',      tag: 'Building',  color: 't-amber',  event: 'Continues building Jupitrr',                       link: 'https://jupitrr.com' },
 
+      { year: 2021, phase: 'Pivot',      tag: 'M&A',       color: 't-amber',  event: 'M&A offer received — SPA drafted, acquirer backs out' },
       { year: 2021, phase: 'Pivot',      tag: 'Grad',      color: 't-indigo', event: 'Graduates from The University of Hong Kong',       link: 'https://www.hku.hk' },
       { year: 2021, phase: 'Pivot',      tag: 'Moved',     color: 't-gray',   event: 'Moves to Canada' },
       { year: 2021, phase: 'Pivot',      tag: 'Shutdown',  color: 't-red',    event: 'Shuts down the team' },
       { year: 2021, phase: 'Pivot',      tag: 'Founded',   color: 't-green',  event: 'Starts Jupitrr',                                   link: 'https://jupitrr.com' },
 
-      { year: 2020, phase: 'Scale',      tag: 'Milestone', color: 't-green',  event: 'Freehunter hits 100k users',                       link: 'https://freehunter.io' },
-      { year: 2020, phase: 'Scale',      tag: 'Growth',    color: 't-blue',   event: 'Continues growing through the pandemic' },
+      { year: 2020, phase: 'Scale',      tag: 'Milestone', color: 't-green',  event: 'Freehunter — HK market leader, 1.5% of HK\'s population', link: 'https://freehunter.hk' },
 
       { year: 2019, phase: 'Momentum',   tag: 'Award',     color: 't-amber',  event: 'Named 30 Under 30 Hong Kong' },
-      { year: 2019, phase: 'Momentum',   tag: 'Expert',    color: 't-teal',   event: 'SEO expert — widely known in the industry' },
+      { year: 2019, phase: 'Momentum',   tag: 'Failed',    color: 't-red',    event: 'Builds LinkedIn for creatives — high engagement, cashflow issues, shuts down' },
+      { year: 2019, phase: 'Momentum',   tag: 'Expert',    color: 't-teal',   event: 'Ranked #1 on top keywords like \'freelance Hong Kong\'' },
       { year: 2019, phase: 'Momentum',   tag: 'Team',      color: 't-amber',  event: '10+ employees — rents an office' },
 
-      { year: 2018, phase: 'Momentum',   tag: 'Funding',   color: 't-green',  event: 'Raises angel funding' },
-      { year: 2018, phase: 'Momentum',   tag: 'Speaking',  color: 't-blue',   event: 'Guest lecturer at HKU',                            link: 'https://www.hku.hk' },
-      { year: 2018, phase: 'Momentum',   tag: 'Funding',   color: 't-green',  event: 'Raises from listed company HR directors' },
+      { year: 2018, phase: 'Momentum',   tag: 'Funding',   color: 't-green',  event: 'Raises angel funding from listed company HR directors' },
+      { year: 2018, phase: 'Momentum',   tag: 'Speaking',  color: 't-blue',   event: 'One of the youngest guest lecturers at HKU' },
 
       { year: 2017, phase: 'Experiment', tag: 'Gap',       color: 't-gray',   event: 'Takes a gap semester' },
-      { year: 2017, phase: 'Experiment', tag: 'Community', color: 't-teal',   event: 'Joins a hackerspace' },
+      { year: 2017, phase: 'Experiment', tag: 'Failed',    color: 't-red',    event: 'Launches an online hackerspace — fails' },
       { year: 2017, phase: 'Experiment', tag: 'Failed',    color: 't-red',    event: 'Multiple cofounders — startup fails (no funding model)' },
 
-      { year: 2016, phase: 'Experiment', tag: 'Offer',     color: 't-gray',   event: 'Receives offers from Wingz + Wells Fargo' },
+      { year: 2016, phase: 'Experiment', tag: 'Offer',     color: 't-gray',   event: 'Receives offers from Wingz + Wells Fargo',         link: 'https://en.wikipedia.org/wiki/Wingz_(company)' },
       { year: 2016, phase: 'Experiment', tag: 'Failed',    color: 't-red',    event: 'Joins a Shanghai startup instead — it shuts down' },
 
-      { year: 2015, phase: 'Origins',    tag: 'Business',  color: 't-amber',  event: 'CNY toy business — $4k raised, breaks even' },
+      { year: 2015, phase: 'Origins',    tag: 'Business',  color: 't-amber',  event: 'First biz — CNY toy business, fundraised from family, breaks even' },
       { year: 2015, phase: 'Origins',    tag: 'Education', color: 't-indigo', event: 'Enters The University of Hong Kong',               link: 'https://www.hku.hk' },
 
       { year: 2014, phase: 'Origins',    tag: 'Piano',     color: 't-pink',   event: 'Achieves Piano Grade 8' },
