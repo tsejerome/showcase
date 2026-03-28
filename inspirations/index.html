@@ -127,21 +127,28 @@
     }
     .person-card:hover { border-color: var(--text); }
 
+    .card-image-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--border);
+      position: relative;
+    }
+
     .card-image {
       width: 100%;
-      height: 180px;
+      height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
       filter: grayscale(100%);
       transition: filter 0.3s;
     }
-    .person-card:hover .card-image { filter: grayscale(80%); }
+    .person-card:hover .card-image { filter: grayscale(75%); }
 
     .card-image-placeholder {
       width: 100%;
-      height: 180px;
-      background: var(--border);
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -277,6 +284,7 @@
         quote: 'Without Their Permission.',
         takeaway: "His book was one of the things that pushed me to actually start. The core idea — that the internet lets anyone build something real without needing anyone's approval — hit hard at the right time. You don't need a VC, a big team, or a famous name. You just need to start.",
         image: 'https://unavatar.io/twitter/alexisohanian',
+        imagePos: 'center top',
         links: [
           { label: 'withouttheirpermission.com', url: 'https://www.withouttheirpermission.com' },
         ],
@@ -288,6 +296,7 @@
         quote: 'Make money, not art.',
         takeaway: "Pieter showed me that you can build profitable products solo, travel the world, stay healthy, and not burn out doing it. The balance he strikes between shipping things that work, living well, and keeping a small team is exactly the kind of life I'm optimizing for.",
         image: 'https://unavatar.io/twitter/levelsio',
+        imagePos: 'center top',
         links: [
           { label: 'x.com/levelsio', url: 'https://x.com/levelsio' },
           { label: 'levels.io', url: 'https://levels.io' },
@@ -300,6 +309,7 @@
         quote: 'Wealth is assets that earn while you sleep.',
         takeaway: "Naval's book and tweetstorms changed how I think about wealth, leverage, and self-knowledge. His ideas on specific knowledge, productizing yourself, and finding inner peace gave me a framework I keep returning to — especially during the hard years of building.",
         image: 'https://unavatar.io/twitter/naval',
+        imagePos: 'center top',
         links: [
           { label: 'x.com/naval', url: 'https://x.com/naval' },
           { label: 'navalmanack.com', url: 'https://www.navalmanack.com' },
@@ -314,18 +324,20 @@
         tags: ['resilience', 'hope'],
         quote: 'You will give the people of Earth an ideal to strive towards.',
         takeaway: "Superman carries more power than almost anyone — and more struggle. Losing his world, living between two identities, never fully belonging anywhere. But he channels all of that into being a source of hope for others rather than turning inward. A reminder that strength isn't just what you can do, it's what you choose to do with it.",
-        image: null, // TODO: add sky man meme image URL
+        image: 'https://upload.wikimedia.org/wikipedia/en/1/1d/Action_Comics_1.jpg',
+        imagePos: 'center top',
         links: [],
       },
       {
         name: 'Ryland Grace',
-        handle: 'Project Hail Mary — Andy Weir',
+        handle: 'Project Hail Mary (2026) — Ryan Gosling',
         tags: ['resilience', 'science', 'fiction'],
         quote: 'How did I end up here? One decision at a time.',
         takeaway: "Grace is a regular person — a middle-school science teacher — who wakes up alone in space with no memory, tasked with saving humanity. What gets me is his approach: no drama, just iterate. Observe, hypothesize, test, adapt. He doesn't need to be a hero. He just keeps solving the next problem in front of him. That's the most honest depiction of how anything hard actually gets done.",
-        image: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Project_Hail_Mary_-_book_cover.jpg/220px-Project_Hail_Mary_-_book_cover.jpg',
+        image: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Project_Hail_Mary_film_poster.jpg/220px-Project_Hail_Mary_film_poster.jpg',
+        imagePos: 'center top',
         links: [
-          { label: 'Project Hail Mary', url: 'https://en.wikipedia.org/wiki/Project_Hail_Mary' },
+          { label: 'Project Hail Mary (film)', url: 'https://en.wikipedia.org/wiki/Project_Hail_Mary_(film)' },
         ],
       },
     ];
@@ -337,9 +349,10 @@
 
     function renderCards(data, containerId) {
       document.getElementById(containerId).innerHTML = data.map(p => {
-        const imgHTML = p.image
-          ? `<img class="card-image" src="${p.image}" alt="${p.name}" loading="lazy">`
-          : `<div class="card-image-placeholder">image coming soon</div>`;
+        const imgInner = p.image
+          ? `<img class="card-image" src="${p.image}" alt="${p.name}" loading="lazy" style="object-position:${p.imagePos||'center top'}" onerror="this.parentElement.innerHTML='<div class=\\'card-image-placeholder\\'>no image</div>'">`
+          : `<div class="card-image-placeholder">—</div>`;
+        const imgHTML = `<div class="card-image-wrap">${imgInner}</div>`;
         return `
         <div class="person-card">
           ${imgHTML}
