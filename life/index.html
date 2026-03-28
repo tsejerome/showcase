@@ -101,6 +101,13 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    @media (max-width: 540px) {
+      nav { padding: 0 16px; }
+      .nav-links { gap: 12px; }
+      .nav-links .hide-mobile { display: none; }
+      .dark-toggle { margin-left: 4px; padding: 4px 8px; }
+    }
+
     .dark-toggle {
       background: none;
       border: 1px solid var(--border);
@@ -331,10 +338,10 @@
   <nav>
     <a class="nav-logo" href="..">Jerome.</a>
     <ul class="nav-links">
-      <li><a href="https://twitter.com/tsejerome" target="_blank">X</a></li>
-      <li><a href="https://linkedin.com/in/tse-jerome" target="_blank">IN</a></li>
-      <li><a href="https://jupitrr.com" target="_blank">Jupitrr</a></li>
-      <li><a href="../#socials">Socials</a></li>
+      <li class="hide-mobile"><a href="https://twitter.com/tsejerome" target="_blank">X</a></li>
+      <li class="hide-mobile"><a href="https://linkedin.com/in/tse-jerome" target="_blank">IN</a></li>
+      <li class="hide-mobile"><a href="https://jupitrr.com" target="_blank">Jupitrr</a></li>
+      <li class="hide-mobile"><a href="../#socials">Socials</a></li>
       <li><a href="../inspirations">Inspirations</a></li>
       <li><button class="dark-toggle" id="dark-toggle">Dark</button></li>
     </ul>
