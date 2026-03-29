@@ -356,12 +356,17 @@
 
     <div class="filters">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="Scale">Scale</button>
-      <button class="filter-btn" data-filter="Growth">Growth</button>
-      <button class="filter-btn" data-filter="Breakout">Breakout</button>
+      <button class="filter-btn" data-filter="Reborn">Reborn</button>
+      <button class="filter-btn" data-filter="Grind">Grind</button>
+      <button class="filter-btn" data-filter="Learn">Learn</button>
+      <button class="filter-btn" data-filter="Restart">Restart</button>
+      <button class="filter-btn" data-filter="Break">Break</button>
       <button class="filter-btn" data-filter="Pivot">Pivot</button>
-      <button class="filter-btn" data-filter="Momentum">Momentum</button>
+      <button class="filter-btn" data-filter="Scale">Scale</button>
+      <button class="filter-btn" data-filter="Manifestation">Manifestation</button>
+      <button class="filter-btn" data-filter="Foundation">Foundation</button>
       <button class="filter-btn" data-filter="Experiment">Experiment</button>
+      <button class="filter-btn" data-filter="Explore">Explore</button>
       <button class="filter-btn" data-filter="Origins">Origins</button>
     </div>
 
@@ -385,85 +390,90 @@
     // Each entry: { year, yearLabel?, phase, tag, color, event, link? }
     // color: t-green | t-blue | t-amber | t-purple | t-red | t-gray | t-teal | t-pink | t-indigo
     const timeline = [
-      { year: 2026, phase: 'Scale',      tag: 'Milestone', color: 't-green',  event: 'Jupitrr reaches 170k users',                       link: 'https://jupitrr.com' },
-      { year: 2026, phase: 'Scale',      tag: 'AI',        color: 't-purple', event: 'Early user of OpenClaw' },
-      { year: 2026, phase: 'Scale',      tag: 'AI',        color: 't-purple', event: 'Scaling Video OS + AI agents' },
+      { year: 2026, phase: 'Reborn',        tag: 'Milestone', color: 't-green',  event: 'Jupitrr reaches 170k users',                             link: 'https://jupitrr.com' },
+      { year: 2026, phase: 'Reborn',        tag: 'AI',        color: 't-purple', event: 'Early user of OpenClaw' },
+      { year: 2026, phase: 'Reborn',        tag: 'AI',        color: 't-purple', event: 'Scaling Video OS + AI agents' },
 
-      { year: 2025, phase: 'Growth',     tag: 'Milestone', color: 't-green',  event: 'Jupitrr hits 100k users',                          link: 'https://jupitrr.com' },
-      { year: 2025, phase: 'Growth',     tag: 'AI',        color: 't-purple', event: 'Builds AI video agent Levio',                      link: 'https://jupitrr.com/levio' },
-      { year: 2025, phase: 'Growth',     tag: 'AI',        color: 't-purple', event: 'AI native — 15+ people\'s output with a 3-person team (Claude + Whisper + OpenClaw)' },
-      { year: 2025, phase: 'Growth',     tag: 'Tooling',   color: 't-teal',   event: 'Scales with Claude Code' },
-      { year: 2025, phase: 'Growth',     tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Day',                link: 'https://www.producthunt.com/products/jupitrr' },
-      { year: 2025, phase: 'Growth',     tag: 'Health',    color: 't-pink',   event: 'Chest press 60kg × 15' },
-      { year: 2025, phase: 'Growth',     tag: 'Health',    color: 't-pink',   event: '75 Soft Challenge',               link: 'https://andyfrisella.com/pages/75hard' },
-      { year: 2025, phase: 'Growth',     tag: 'Side Hustle', color: 't-gray', event: 'Explored voicerecorder.ai + worksheet-genie.com — no time to pursue' },
-      { year: 2025, phase: 'Growth',     tag: 'Revenue',   color: 't-amber',  event: 'Built torontoeventsweekly.ca — 1 hr/week, stable $500 MRR', link: 'https://torontoeventsweekly.ca' },
+      { year: 2025, phase: 'Grind',         tag: 'Milestone', color: 't-green',  event: 'Jupitrr hits 100k users',                                link: 'https://jupitrr.com' },
+      { year: 2025, phase: 'Grind',         tag: 'AI',        color: 't-purple', event: 'Builds AI video agent Levio',                            link: 'https://jupitrr.com/levio' },
+      { year: 2025, phase: 'Grind',         tag: 'AI',        color: 't-purple', event: 'AI native — 15+ people\'s output with a 3-person team (Claude + Whisper + OpenClaw)' },
+      { year: 2025, phase: 'Grind',         tag: 'Tooling',   color: 't-teal',   event: 'Scales with Claude Code' },
+      { year: 2025, phase: 'Grind',         tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Day',                      link: 'https://www.producthunt.com/products/jupitrr' },
+      { year: 2025, phase: 'Grind',         tag: 'Health',    color: 't-pink',   event: 'Chest press 60kg × 15' },
+      { year: 2025, phase: 'Grind',         tag: 'Health',    color: 't-pink',   event: '75 Soft Challenge',                                      link: 'https://andyfrisella.com/pages/75hard' },
+      { year: 2025, phase: 'Grind',         tag: 'Side Hustle', color: 't-gray', event: 'Built voicerecorder.ai + worksheet-genie.com — no founder product fit' },
+      { year: 2025, phase: 'Grind',         tag: 'Revenue',   color: 't-amber',  event: 'Built torontoeventsweekly.ca — 1 hr/week, stable $500 MRR', link: 'https://torontoeventsweekly.ca' },
 
-      { year: 2024, phase: 'Growth',     tag: 'Tooling',   color: 't-teal',   event: 'Early user of Cursor + Devin' },
-      { year: 2024, phase: 'Growth',     tag: 'Network',   color: 't-indigo', event: 'SF trip — meets YC founders' },
-      { year: 2024, phase: 'Growth',     tag: 'Failed',    color: 't-red',    event: 'Rejected by YC for the 10th time — with 5+ referrals' },
-      { year: 2024, phase: 'Growth',     tag: 'Revenue',   color: 't-amber',  event: 'AppSumo deal generates $300k+ overnight' },
-      { year: 2024, phase: 'Growth',     tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Week + Day',         link: 'https://www.producthunt.com/products/jupitrr' },
-      { year: 2024, phase: 'Growth',     tag: 'Health',    color: 't-pink',   event: '75 Hard Challenge',               link: 'https://andyfrisella.com/pages/75hard' },
+      { year: 2024, phase: 'Learn',         tag: 'Pivot',     color: 't-blue',   event: 'Jupitrr pivots to video sharing tools for social media' },
+      { year: 2024, phase: 'Learn',         tag: 'Tooling',   color: 't-teal',   event: 'Early user of Cursor + Devin' },
+      { year: 2024, phase: 'Learn',         tag: 'Network',   color: 't-indigo', event: 'SF trip — meets YC founders' },
+      { year: 2024, phase: 'Learn',         tag: 'Failed',    color: 't-red',    event: 'Rejected by YC for the 10th time — with 5+ referrals' },
+      { year: 2024, phase: 'Learn',         tag: 'Revenue',   color: 't-amber',  event: 'AppSumo deal generates $300k+ overnight' },
+      { year: 2024, phase: 'Learn',         tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Week + Day',               link: 'https://www.producthunt.com/products/jupitrr' },
+      { year: 2024, phase: 'Learn',         tag: 'Health',    color: 't-pink',   event: '75 Hard Challenge',                                      link: 'https://andyfrisella.com/pages/75hard' },
 
-      { year: 2023, phase: 'Breakout',   tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Day',                link: 'https://www.producthunt.com/products/jupitrr' },
-      { year: 2023, phase: 'Breakout',   tag: 'Tooling',   color: 't-teal',   event: 'Early user of ChatGPT 3.5' },
-      { year: 2023, phase: 'Breakout',   tag: 'Health',    color: 't-pink',   event: 'Starts going to the gym' },
+      { year: 2023, phase: 'Restart',       tag: 'Pivot',     color: 't-blue',   event: 'Jupitrr pivots to social sharing platform' },
+      { year: 2023, phase: 'Restart',       tag: 'Launch',    color: 't-blue',   event: 'Product Hunt — Product of the Day',                      link: 'https://www.producthunt.com/products/jupitrr' },
+      { year: 2023, phase: 'Restart',       tag: 'Tooling',   color: 't-teal',   event: 'Early user of ChatGPT 3.5' },
+      { year: 2023, phase: 'Restart',       tag: 'Health',    color: 't-pink',   event: 'Starts going to the gym' },
 
-      { year: 2022, phase: 'Scale',      tag: 'Passive',   color: 't-green',  event: 'Freehunter becomes passive income',                link: 'https://freehunter.hk' },
-      { year: 2022, phase: 'Scale',      tag: 'Burnout',   color: 't-gray',   event: 'Burnout — slower life' },
-      { year: 2022, phase: 'Scale',      tag: 'Building',  color: 't-amber',  event: 'Continues building Jupitrr',                       link: 'https://jupitrr.com' },
+      { year: 2022, phase: 'Break',         tag: 'Moved',     color: 't-gray',   event: 'Moves to Canada' },
+      { year: 2022, phase: 'Break',         tag: 'Passive',   color: 't-green',  event: 'Freehunter becomes passive income',                      link: 'https://freehunter.hk' },
+      { year: 2022, phase: 'Break',         tag: 'Burnout',   color: 't-gray',   event: 'Jupitrr becomes part-time due to burnout' },
 
-      { year: 2021, phase: 'Pivot',      tag: 'M&A',       color: 't-amber',  event: 'M&A offer received — SPA drafted, acquirer backs out' },
-      { year: 2021, phase: 'Pivot',      tag: 'Milestone', color: 't-green',  event: 'Freehunter hits $30M+ transaction volume' },
-      { year: 2021, phase: 'Pivot',      tag: 'Grad',      color: 't-indigo', event: 'Graduates from The University of Hong Kong',       link: 'https://www.hku.hk' },
-      { year: 2021, phase: 'Pivot',      tag: 'Moved',     color: 't-gray',   event: 'Moves to Canada' },
-      { year: 2021, phase: 'Pivot',      tag: 'Shutdown',  color: 't-red',    event: 'Shuts down the team' },
-      { year: 2021, phase: 'Pivot',      tag: 'Founded',   color: 't-green',  event: 'Starts Jupitrr',                                   link: 'https://jupitrr.com' },
+      { year: 2021, phase: 'Pivot',         tag: 'M&A',       color: 't-amber',  event: 'M&A offer received — SPA drafted, acquirer drags review period so that our cashflow burns to lowball us on negotiation' },
+      { year: 2021, phase: 'Pivot',         tag: 'Milestone', color: 't-green',  event: 'Freehunter hits $30M+ transaction volume' },
+      { year: 2021, phase: 'Pivot',         tag: 'Grad',      color: 't-indigo', event: 'Graduates from The University of Hong Kong',             link: 'https://www.hku.hk' },
+      { year: 2021, phase: 'Pivot',         tag: 'Shutdown',  color: 't-red',    event: 'Shuts down the team' },
+      { year: 2021, phase: 'Pivot',         tag: 'Founded',   color: 't-green',  event: 'Jupitrr first idea — tinder for business, challenging revenue model' },
 
-      { year: 2020, phase: 'Scale',      tag: 'Milestone', color: 't-green',  event: 'Freehunter — HK market leader, registered user count is 1.5% of HK\'s population', link: 'https://freehunter.hk' },
+      { year: 2020, phase: 'Scale',         tag: 'Milestone', color: 't-green',  event: 'Freehunter hits 100k users — HK market leader, registered user count is 1.5% of HK\'s population', link: 'https://freehunter.hk' },
+      { year: 2020, phase: 'Scale',         tag: 'Expansion', color: 't-blue',   event: 'Expands to Taiwan, pivots back to freelance job matching platform' },
+      { year: 2020, phase: 'Scale',         tag: 'Personal',  color: 't-gray',   event: 'Tried getting long hair' },
 
-      { year: 2019, phase: 'Momentum',   tag: 'Award',     color: 't-amber',  event: 'Named 30 Under 30 Hong Kong' },
-      { year: 2019, phase: 'Momentum',   tag: 'Failed',    color: 't-red',    event: 'Builds LinkedIn for creatives — high engagement, cashflow issues, shuts down' },
-      { year: 2019, phase: 'Momentum',   tag: 'Expert',    color: 't-teal',   event: 'Ranked #1 on top keywords like \'freelance Hong Kong\'' },
-      { year: 2019, phase: 'Momentum',   tag: 'Team',      color: 't-amber',  event: '10+ employees — rents an office' },
+      { year: 2019, phase: 'Manifestation', tag: 'Award',     color: 't-amber',  event: 'Named 30 Under 30 Hong Kong' },
+      { year: 2019, phase: 'Manifestation', tag: 'Failed',    color: 't-red',    event: 'Builds LinkedIn for creatives — high engagement, cashflow issues, shuts down' },
+      { year: 2019, phase: 'Manifestation', tag: 'Expert',    color: 't-teal',   event: 'Ranked #1 on 100+ top keywords like \'freelance Hong Kong\'' },
+      { year: 2019, phase: 'Manifestation', tag: 'Team',      color: 't-amber',  event: '10+ employees — rents an office' },
 
-      { year: 2018, phase: 'Momentum',   tag: 'Funding',   color: 't-green',  event: 'Raises angel funding from listed company HR directors' },
-      { year: 2018, phase: 'Momentum',   tag: 'Speaking',  color: 't-blue',   event: 'One of the youngest guest lecturers at HKU' },
+      { year: 2018, phase: 'Foundation',    tag: 'Founding',  color: 't-amber',  event: 'Met <a href="https://linkedin.com/in/harrischh" target="_blank">Harris</a> and <a href="https://www.linkedin.com/in/leetszhoi/" target="_blank">Lee</a> — cofound Freehunter.hk' },
+      { year: 2018, phase: 'Foundation',    tag: 'Funding',   color: 't-green',  event: 'Raises angel funding from listed company HR directors' },
+      { year: 2018, phase: 'Foundation',    tag: 'Speaking',  color: 't-blue',   event: 'One of the youngest guest lecturers at HKU' },
 
-      { year: 2017, phase: 'Experiment', tag: 'Gap',       color: 't-gray',   event: 'Takes a gap semester' },
-      { year: 2017, phase: 'Experiment', tag: 'Failed',    color: 't-red',    event: 'Launches an online hackerspace — fails' },
-      { year: 2017, phase: 'Experiment', tag: 'Failed',    color: 't-red',    event: 'Multiple cofounders — startup fails (no funding model)' },
+      { year: 2017, phase: 'Experiment',    tag: 'Gap',       color: 't-gray',   event: 'Takes a gap semester' },
+      { year: 2017, phase: 'Experiment',    tag: 'Failed',    color: 't-red',    event: 'Launches an online hackerspace — fails' },
+      { year: 2017, phase: 'Experiment',    tag: 'Failed',    color: 't-red',    event: 'Tried building with different cofounders — startup fails (founder conflicts)' },
 
-      { year: 2016, phase: 'Experiment', tag: 'Offer',     color: 't-gray',   event: 'Receives offers from Wingz + Wells Fargo',         link: 'https://en.wikipedia.org/wiki/Wingz_(company)' },
-      { year: 2016, phase: 'Experiment', tag: 'Failed',    color: 't-red',    event: 'Joins a Shanghai startup instead — it shuts down' },
+      { year: 2016, phase: 'Explore',       tag: 'Offer',     color: 't-gray',   event: 'Receives offers from <a href="https://en.wikipedia.org/wiki/Wingz_(company)" target="_blank">Wingz</a> + Wells Fargo' },
+      { year: 2016, phase: 'Explore',       tag: 'Failed',    color: 't-red',    event: 'Joins a Shanghai startup instead — it shuts down' },
 
-      { year: 2015, phase: 'Origins',    tag: 'Business',  color: 't-amber',  event: 'First biz — CNY toy business, fundraised from family, breaks even' },
-      { year: 2015, phase: 'Origins',    tag: 'Education', color: 't-indigo', event: 'Enters The University of Hong Kong',               link: 'https://www.hku.hk' },
+      { year: 2015, phase: 'Origins',       tag: 'Business',  color: 't-amber',  event: 'First biz — CNY toy business, fundraised from family, breaks even' },
+      { year: 2015, phase: 'Origins',       tag: 'Education', color: 't-indigo', event: 'Enters The University of Hong Kong',                     link: 'https://www.hku.hk' },
 
-      { year: 2014, phase: 'Origins',    tag: 'Piano',     color: 't-pink',   event: 'Achieves Piano Grade 8' },
+      { year: 2004, phase: 'Origins',       tag: 'Piano',     color: 't-pink',   event: 'Achieves Piano Grade 8',                                 yearLabel: '2004–14' },
+      { year: 2004, phase: 'Origins',       tag: 'Code',      color: 't-teal',   event: 'Builds first PHP website — fails, but ships it' },
+      { year: 2004, phase: 'Origins',       tag: 'Gaming',    color: 't-green',  event: 'Plays Minecraft beta' },
+      { year: 2004, phase: 'Origins',       tag: 'Community', color: 't-teal',   event: 'Runs own minecraft game server (Hamachi + Bukkit)' },
+      { year: 2004, phase: 'Origins',       tag: 'Community', color: 't-teal',   event: 'Admin of a major CS 1.6 server in Hong Kong' },
+      { year: 2004, phase: 'Origins',       tag: 'Piano',     color: 't-pink',   event: 'Learns piano' },
 
-      { year: 2012, phase: 'Origins',    tag: 'Code',      color: 't-teal',   event: 'Builds first PHP website — fails, but ships it' },
-
-      { year: 2010, phase: 'Origins',    tag: 'Gaming',    color: 't-green',  event: 'Plays Minecraft beta' },
-      { year: 2010, phase: 'Origins',    tag: 'Community', color: 't-teal',   event: 'Runs own minecraft game server (Hamachi + Bukkit)' },
-
-      { year: 2009, phase: 'Origins',    tag: 'Community', color: 't-teal',   event: 'Admin of a major CS 1.6 server in Hong Kong' },
-
-      { year: 2004, phase: 'Origins',    tag: 'Piano',     color: 't-pink',   event: 'Learns piano', yearLabel: '2004–07' },
-
-      { year: 1997, phase: 'Origins',    tag: 'Born',      color: 't-gray',   event: 'Born in Canada' },
+      { year: 1997, phase: 'Origins',       tag: 'Born',      color: 't-gray',   event: 'Born in Canada' },
     ];
 
     // ── PHASE COLOR MAP ──────────────────────────────────────────────
     const phaseColor = {
-      Scale:      't-green',
-      Growth:     't-blue',
-      Breakout:   't-amber',
-      Pivot:      't-purple',
-      Momentum:   't-red',
-      Experiment: 't-gray',
-      Origins:    't-indigo',
+      Origins:       't-indigo',
+      Explore:       't-teal',
+      Experiment:    't-gray',
+      Foundation:    't-amber',
+      Manifestation: 't-purple',
+      Scale:         't-green',
+      Pivot:         't-purple',
+      Break:         't-gray',
+      Restart:       't-blue',
+      Learn:         't-indigo',
+      Grind:         't-red',
+      Reborn:        't-green',
     };
 
     // ── RENDER ───────────────────────────────────────────────────────
