@@ -124,36 +124,6 @@
       margin-bottom: 28px;
     }
 
-    /* Tabs */
-    .tabs {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 32px;
-    }
-
-    .tab-btn {
-      font-size: 13px;
-      font-family: inherit;
-      font-weight: 500;
-      color: var(--muted);
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      padding: 8px 16px 9px;
-      cursor: pointer;
-      margin-bottom: -1px;
-      transition: color 0.1s;
-    }
-    .tab-btn:hover { color: var(--text); }
-    .tab-btn.active {
-      color: var(--text);
-      border-bottom-color: var(--text);
-    }
-
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
     /* Cards */
     .person-card {
       border: 1px solid var(--border);
@@ -311,13 +281,7 @@
     <h1>Inspirations</h1>
     <p class="subtitle">People and stories that shaped how I think.</p>
 
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="people">People</button>
-      <button class="tab-btn" data-tab="stories">Stories</button>
-    </div>
-
-    <div id="people" class="tab-panel active"></div>
-    <div id="stories" class="tab-panel"></div>
+    <div id="cards"></div>
   </div>
 
   <script>
@@ -419,17 +383,7 @@
       }).join('');
     }
 
-    renderCards(people, 'people');
-    renderCards(stories, 'stories');
-
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
-      });
-    });
+    renderCards([...people, ...stories], 'cards');
 
     const toggle = document.getElementById('dark-toggle');
     const isDark = () => document.documentElement.classList.contains('dark');
