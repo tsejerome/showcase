@@ -111,6 +111,8 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    .hide-mobile { display: flex; align-items: center; }
+
     @media (max-width: 540px) {
       nav { padding: 0 16px; }
       .nav-links { gap: 12px; }
@@ -551,6 +553,18 @@
     updateHKTime();
     setInterval(updateHKTime, 1000);
   </script>
+
+  <a href="/legacy" id="creative-mode-btn" style="
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: block;
+    width: 140px;
+    cursor: url('https://i.imgur.com/6CmdL1l.png'), auto;
+  ">
+    <img src="./src/creative-mode.png" alt="Creative Mode" style="width: 100%; height: auto; display: block;">
+  </a>
 
 </body>
 </html>
