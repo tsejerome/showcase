@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Curriculum Vitae · Wong Ho Ying (Zoe) · 黃可盈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --page: #FFFFFF;
+    --desk: #E8E3D8;
+    --ink: #14110D;
+    --ink-soft: #3A322A;
+    --ink-mute: #6B6256;
+    --rule: #C7BDA8;
+    --rule-light: #E5DECF;
+    --accent: #6B1F30;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    background: var(--desk);
+    color: var(--ink);
+    font-family: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ============= PAGE ============= */
+  .page {
+    background: var(--page);
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 64px 72px 60px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+  }
+
+  /* ============= HEADER ============= */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: start;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .name {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 36pt;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .name .zoe {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .chinese-name {
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 18pt;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .tagline {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14pt;
+    color: var(--accent);
+    line-height: 1.35;
+    max-width: 460px;
+  }
+
+  .portrait {
+    width: 108px;
+    height: 138px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--rule-light);
+  }
+
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 76% 28%;
+    filter: grayscale(0.15) contrast(1.02);
+  }
+
+  /* ============= CONTACT BAR ============= */
+  .contact-bar {
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 0 14px;
+    margin-bottom: 24px;
+    font-size: 11pt;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    align-items: center;
+  }
+
+  .contact-bar .sep {
+    color: var(--rule);
+    font-style: italic;
+  }
+
+  .contact-bar a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule);
+  }
+
+  .contact-bar a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ============= SECTION ============= */
+  section {
+    margin-bottom: 22px;
+    page-break-inside: avoid;
+  }
+
+  h2.section-title {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 12pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+  }
+
+  /* ============= PROFILE ============= */
+  .profile-text {
+    font-size: 12pt;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
+  .profile-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ============= EXPERIENCE ============= */
+  .role {
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .role:last-child {
+    margin-bottom: 0;
+  }
+
+  .role-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .role-title {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 12.5pt;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+
+  .role-date {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 11pt;
+    color: var(--ink-mute);
+    white-space: nowrap;
+  }
+
+  .role-org {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 11.5pt;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+
+  .role-org .loc {
+    font-style: normal;
+    color: var(--ink-mute);
+    font-size: 10.5pt;
+  }
+
+  .role ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 4px;
+  }
+
+  .role li {
+    font-size: 11.5pt;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 3px;
+    text-align: justify;
+  }
+
+  .role li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    top: -2px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16pt;
+  }
+
+  .role li strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ============= EDUCATION ============= */
+  .edu-item {
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+  }
+
+  .edu-item:last-child { margin-bottom: 0; }
+
+  .edu-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: baseline;
+  }
+
+  .edu-degree {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 12pt;
+    color: var(--ink);
+  }
+
+  .edu-school {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 11.5pt;
+    color: var(--accent);
+  }
+
+  .edu-detail {
+    font-size: 11pt;
+    color: var(--ink-mute);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  /* ============= PROJECTS ============= */
+  .project {
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+  }
+
+  .project:last-child { margin-bottom: 0; }
+
+  .project-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .project-name {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 12pt;
+    color: var(--ink);
+  }
+
+  .project-role {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 11pt;
+    color: var(--ink-mute);
+  }
+
+  .project-desc {
+    font-size: 11.5pt;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .project-desc strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ============= TWO-COL LISTS ============= */
+  .two-col {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--rule-light);
+  }
+
+  .cert {
+    break-inside: avoid;
+    margin-bottom: 8px;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .cert .cert-name {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .cert .cert-issuer {
+    font-style: italic;
+    color: var(--ink-mute);
+    font-size: 10.5pt;
+    display: block;
+  }
+
+  /* ============= SKILLS ============= */
+  .skill-line {
+    font-size: 11.5pt;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  .skill-line .cat {
+    font-weight: 600;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* ============= LANG / VOLUNTEER ============= */
+  .compact-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 14px;
+    margin-bottom: 5px;
+    font-size: 11.5pt;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .compact-row .cat {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ============= FOOTER ============= */
+  .page-footer {
+    margin-top: 36px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 9.5pt;
+    font-style: italic;
+    color: var(--ink-mute);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 860px) {
+    .page {
+      margin: 0;
+      padding: 36px 24px;
+      box-shadow: none;
+    }
+    .name { font-size: 26pt; }
+    .chinese-name { font-size: 15pt; }
+    .tagline { font-size: 12pt; }
+    .header { grid-template-columns: 1fr; }
+    .portrait { width: 86px; height: 110px; order: -1; }
+    .role-head, .edu-head, .project-head {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .role-date { font-size: 10pt; }
+    .compact-row { grid-template-columns: 1fr; gap: 0; }
+    .two-col { column-count: 1; }
+  }
+
+  /* ============= PRINT ============= */
+  @media print {
+    @page {
+      size: A4;
+      margin: 14mm 16mm;
+    }
+    html, body {
+      background: white;
+    }
+    .page {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    a {
+      color: var(--ink-soft) !important;
+      border: none !important;
+    }
+    section {
+      page-break-inside: avoid;
+    }
+    .role, .edu-item, .project, .cert {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ============= HEADER ============= -->
+  <header class="header">
+    <div>
+      <h1 class="name">Wong Ho Ying <span class="zoe">(Zoe)</span></h1>
+      <div class="chinese-name">黃可盈</div>
+      <div class="tagline">Co-founder &amp; Educator · Applied AI Academy</div>
+    </div>
+    <div class="portrait">
+      <img src="cover.png" alt="Wong Ho Ying" />
+    </div>
+  </header>
+
+  <!-- ============= CONTACT ============= -->
+  <div class="contact-bar">
+    <span>+852 9687 8036</span>
+    <span class="sep">·</span>
+    <a href="mailto:wonghoyingzoe@gmail.com">wonghoyingzoe@gmail.com</a>
+    <span class="sep">·</span>
+    <span>Hong Kong SAR</span>
+  </div>
+
+  <!-- ============= PROFILE ============= -->
+  <section>
+    <h2 class="section-title">Profile</h2>
+    <p class="profile-text">
+      Certified teacher with over <strong>ten years of classroom and curriculum experience</strong> and seven years as a Product Manager across enterprise software, edtech, and early-stage start-ups. Co-founder of <strong>Applied AI Academy</strong>, an AI learning platform that empowers <strong>working professionals</strong> to apply AI with confidence across their work, life, and studies. Author of an AI literacy curriculum deployed in <strong>55+ schools</strong> and reaching <strong>43,000+ students and 1,900+ teachers</strong>; founder of the bilingual content channel <strong>Zoe 蘇姨老師</strong>, with <strong>over 300,000 video views in the past thirty days</strong> and a community of 8,000+ followers across social media platforms. Holds a PGDE from CUHK and a BBA in Information Systems &amp; Computer Science from HKU.
+    </p>
+  </section>
+
+  <!-- ============= EXPERIENCE ============= -->
+  <section>
+    <h2 class="section-title">Professional Experience</h2>
+
+    <!-- Applied AI Academy / Auntie So -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Co-founder &amp; Educator-in-Residence</div>
+        <div class="role-date">2025 – Present</div>
+      </div>
+      <div class="role-org">Applied AI Academy &amp; Zoe 蘇姨老師 <span class="loc">· Hong Kong</span></div>
+      <ul>
+        <li>Co-founding <strong>Applied AI Academy</strong>, a mobile learning platform delivering <strong>ten-minute daily lessons</strong> that help working professionals build practical AI literacy — leading <strong>curriculum design, instructional strategy, and learner experience</strong> alongside the engineering co-founder.</li>
+        <li>Designed the lesson framework around real workplace scenarios, sourced through interviews with professionals across multiple industries; supporting the platform's growth to <strong>over 7,000 learners in the first three months</strong> through organic channels.</li>
+        <li>Founded and operate the bilingual content channel <strong>Zoe 蘇姨老師</strong> for parents, educators, and reflective adults asking how they and their children should learn in a world of rapid technological change. Editorial coverage spans <strong>global AI education trends</strong>, how companies and schools worldwide are integrating AI into work and teaching, and <strong>measured, non-alarmist perspectives</strong> on AI learning — building viewers' confidence to apply AI in their own creative work and in educating the next generation.</li>
+        <li>Achieved <strong>over 300,000 video views in the last thirty days</strong> and grew the community to <strong>8,000+ followers across social media platforms</strong> — providing direct audience research and brand foundation for Applied AI Academy.</li>
+        <li>Channels: <em>@auntieso.teachesstem</em> (Instagram) · <em>facebook.com/AuntieSoTeachesSTEM</em>.</li>
+      </ul>
+    </div>
+
+    <!-- Arcadis -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Product Manager / Product Owner</div>
+        <div class="role-date">Dec 2022 – Dec 2025</div>
+      </div>
+      <div class="role-org">Arcadis <span class="loc">· Toronto, Canada</span></div>
+      <ul>
+        <li>Led the development and launch of new event-management features, generating an <strong>additional USD 2 million in revenue</strong>.</li>
+        <li>Owned roadmap, backlog, and discovery for AI-driven action recommendations for vehicle incidents and real-time traffic API integrations.</li>
+        <li>Implemented a restructured user-story workflow that reduced developer clarification time by approximately <strong>15%</strong> and lifted overall team productivity by roughly <strong>30%</strong>.</li>
+        <li>Authored quarterly design documentation and built a clear requirement-to-test-case mapping, improving cross-functional communication between engineering, QA, and operations.</li>
+        <li>Translated complex technical requirements into structured, sequenced delivery plans — applying the same scaffolding instincts used in lesson design.</li>
+      </ul>
+    </div>
+
+    <!-- Freehunter -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Product Manager</div>
+        <div class="role-date">Sep 2019 – Nov 2022</div>
+      </div>
+      <div class="role-org">Freehunter <span class="loc">· Hong Kong</span></div>
+      <ul>
+        <li>Drove a <strong>tenfold increase in monthly active users</strong> by revamping the onboarding flow and core matching experience.</li>
+        <li>Designed and executed process improvements that lifted internal operational efficiency by approximately <strong>80%</strong>.</li>
+        <li>Worked alongside founders, designers, and developers in an Agile environment — defining functional requirements, use-case diagrams, OKRs, and SOWs.</li>
+        <li>Conducted A/B tests and analyzed retention through SQL, Mixpanel, Google Analytics, and Retool dashboards to inform continuous optimisation.</li>
+      </ul>
+    </div>
+
+    <!-- DBS Primary -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Teacher · Mathematics, Computer Studies &amp; Bilingual Electives</div>
+        <div class="role-date">Sep 2021 – Aug 2022</div>
+      </div>
+      <div class="role-org">Diocesan Boys' School (Primary Division) <span class="loc">· Hong Kong</span></div>
+      <ul>
+        <li>Taught multilingual, multicultural classes of English, French, Cantonese, and Mandarin speakers across multiple grade levels.</li>
+        <li>Applied inquiry-based learning and differentiated instruction to engage students of varying levels and backgrounds.</li>
+        <li>Active contributor to the school's <strong>STEAM and Environmental Protection committees</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- AI Academy curriculum -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Curriculum Designer · AI &amp; Media Literacy</div>
+        <div class="role-date">May 2021 – Sep 2021</div>
+      </div>
+      <div class="role-org">AI Academy <span class="loc">· Hong Kong</span></div>
+      <ul>
+        <li>Designed an AI and media literacy curriculum (Scratch AI, online ethics, digital citizenship, AI applications) deployed across <strong>55+ schools</strong>.</li>
+        <li>Reached <strong>over 43,000 students and 1,900 teachers</strong> in collaboration with educators and industry partners.</li>
+      </ul>
+    </div>
+
+    <!-- Idea Maker -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Workshop Lead · Elementary &amp; Middle School Programmes</div>
+        <div class="role-date">Feb 2021 – Sep 2021</div>
+      </div>
+      <div class="role-org">Idea Maker <span class="loc">· Hong Kong</span></div>
+      <ul>
+        <li>Designed and delivered workshops on AI, coding, financial literacy, and science across <strong>six partner schools</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Deloitte -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Analyst, Risk Advisory</div>
+        <div class="role-date">Sep 2018 – Sep 2019</div>
+      </div>
+      <div class="role-org">Deloitte <span class="loc">· Hong Kong</span></div>
+      <ul>
+        <li>Conducted risk assessments and compliance reviews against regulatory standards covering network security, IT governance, risk management, and data protection.</li>
+        <li>Advised clients on the development of IT policies and procedures, system implementation, and ongoing maintenance.</li>
+      </ul>
+    </div>
+
+    <!-- Independent Teaching & Tutoring -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Independent Teaching &amp; Tutoring</div>
+        <div class="role-date">2014 – Present</div>
+      </div>
+      <div class="role-org">Private Tuition &amp; Various Educational Institutions <span class="loc">· Hong Kong</span></div>
+      <ul>
+        <li><strong>Tutor / Instructor</strong>, primary and secondary schools and corporate clients (2014 – Present): provide personalised tuition in <strong>AI, coding, English, and Mathematics</strong>; support students with AI education, academic advancement, and career development. Clients include students from <strong>La Salle College, Discovery Bay International School, and Diocesan Girls' School (DGS)</strong>.</li>
+        <li><strong>STEM &amp; Coding Instructor</strong>, First Code Academy (2019–2020): designed and delivered programmes for local and international school students; organised Open Days and tech showcases.</li>
+        <li><strong>Summer School Teacher</strong>, The International Montessori School (2021): facilitated science, robotics, and creative-design workshops for elementary students.</li>
+        <li><strong>Student Teacher</strong>, Li Sing Primary School &amp; ELCHK Faith Love Lutheran School (2020–2021): earned <em>Grade A in Teaching Practice</em> with commendation for lesson planning and student engagement.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============= EDUCATION ============= -->
+  <section>
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-item">
+      <div class="edu-head">
+        <div>
+          <div class="edu-degree">Postgraduate Diploma in Education (PGDE)</div>
+          <div class="edu-school">The Chinese University of Hong Kong</div>
+        </div>
+        <div class="role-date">2020 – 2021</div>
+      </div>
+      <div class="edu-detail">Awarded for Excellent Academic and Teaching Performance · Grade A in Teaching Practice.</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-head">
+        <div>
+          <div class="edu-degree">Bachelor of Business Administration (BBA)</div>
+          <div class="edu-school">The University of Hong Kong</div>
+        </div>
+        <div class="role-date">2014 – 2018</div>
+      </div>
+      <div class="edu-detail">Major in Information Systems and Computer Science.</div>
+    </div>
+  </section>
+
+  <!-- ============= PROJECTS / VENTURES ============= -->
+  <section>
+    <h2 class="section-title">Entrepreneurial Projects</h2>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-name">Genie Worksheet AI</div>
+        <div class="project-role">Founder · Developer · Product Designer</div>
+      </div>
+      <div class="project-desc">
+        An AI SaaS that generates customisable Grade 1–6 worksheets in Mathematics, English, Science, and Chinese, aligned to multiple curricula (HK EDB, IB PYP, Singapore MOE, NCERT). Built end-to-end on Next.js, Node.js, Firestore, and Stripe with a GPT-powered content pipeline. <strong>Used by 100+ parents and teachers in beta</strong>, achieving an <strong>80% reduction in lesson preparation time</strong>.
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-name">Toronto Events Weekly</div>
+        <div class="project-role">Founder · Product Lead · Email Marketing</div>
+      </div>
+      <div class="project-desc">
+        A profitable weekly newsletter and content platform curating local events and experiences. Grew to <strong>8,000+ subscribers in eight months</strong>, achieved <strong>450,000+ SEO impressions and 13,000 clicks</strong>, and reached profitability with <strong>50+ paying clients</strong>. Developed proprietary <strong>AI workflow automation</strong> that streamlined content curation, scheduling, and publishing — enabling efficient one-person operation at roughly ten hours per month.
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-name">VoiceRecorder.AI</div>
+        <div class="project-role">Co-founder · Product Lead</div>
+      </div>
+      <div class="project-desc">
+        A Chrome extension and mobile application enabling users to record, transcribe, and auto-summarise across web platforms (Slack, Notion, LinkedIn). Led product design, UX, and feature roadmap; integrated OpenAI and Firebase Authentication; oversaw architecture across Next.js, Node.js, and Chrome Extension APIs.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= CERTIFICATIONS ============= -->
+  <section>
+    <h2 class="section-title">Licences &amp; Certifications</h2>
+    <div class="two-col">
+      <div class="cert">
+        <span class="cert-name">Gemini Certified Educator</span>
+        <span class="cert-issuer">Google for Education, 2025</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Generative AI for Educators with Gemini</span>
+        <span class="cert-issuer">Google for Education, 2025</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Google AI for K-12 Educators</span>
+        <span class="cert-issuer">Google for Education, 2025</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Certified Scrum Product Owner (CSPO)</span>
+        <span class="cert-issuer">Scrum Alliance</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Ontario Certified Teacher (OCT)</span>
+        <span class="cert-issuer">Ontario College of Teachers, in progress</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Certificate of Registration as a Teacher</span>
+        <span class="cert-issuer">Hong Kong Education Bureau, 2021</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Apple Teacher</span>
+        <span class="cert-issuer">Apple Inc., 2021</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Foundations of Virtual Instruction</span>
+        <span class="cert-issuer">University of California, Irvine, 2021</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Introduction to Child Psychology</span>
+        <span class="cert-issuer">The Open University, 2022</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Certificate of Education in Visual Arts</span>
+        <span class="cert-issuer">Hong Kong Professional Teachers' Union, 2020</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= SKILLS ============= -->
+  <section>
+    <h2 class="section-title">Skills</h2>
+    <div class="skill-line">
+      <span class="cat">Product &amp; Strategy</span> — Roadmap planning, user-story writing, backlog prioritisation, MVP definition, Agile / Scrum, Jira, Azure DevOps, Notion.
+    </div>
+    <div class="skill-line">
+      <span class="cat">Pedagogy &amp; Curriculum</span> — Inquiry-based learning, differentiated instruction, STEM and robotics, curriculum design, lesson planning, multilingual classroom management, AI literacy.
+    </div>
+    <div class="skill-line">
+      <span class="cat">Engineering</span> — Python, JavaScript, TypeScript, Next.js, Node.js, SQL, Firebase / Firestore, Java, C#, C++, HTML5, CSS.
+    </div>
+    <div class="skill-line">
+      <span class="cat">AI &amp; Educational Tools</span> — Claude, Gemini, OpenAI / GPT, Perplexity, Scratch AI, Teachable Machine, MIT App Inventor, Minecraft Education, Arduino, mBot, Cubetto, Dash Robot, Thunkable.
+    </div>
+    <div class="skill-line">
+      <span class="cat">Design &amp; Growth</span> — Figma, Balsamiq, Canva, A/B testing, Google Analytics, SEO, email marketing, social-media growth.
+    </div>
+  </section>
+
+  <!-- ============= LANGUAGES & VOLUNTEERING ============= -->
+  <section>
+    <h2 class="section-title">Languages &amp; Volunteering</h2>
+    <div class="compact-row">
+      <span class="cat">Languages</span>
+      <span>Cantonese, English and Mandarin</span>
+    </div>
+    <div class="compact-row">
+      <span class="cat">Volunteering</span>
+      <span>Volunteer, Canadian Association for Girls in Science (CAGIS), 2024 – 2025.</span>
+    </div>
+  </section>
+
+  <div class="page-footer">
+    Wong Ho Ying (Zoe) · 黃可盈 · Curriculum Vitae · 2026
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -10,7 +10,7 @@
     />
     <link rel="icon" href="../src/favicon.png" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600;700&display=swap");
 
       *,
       *::before,
@@ -82,7 +82,7 @@
       }
 
       .nav-logo {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-size: 17px;
         font-weight: 700;
         letter-spacing: -0.2px;
@@ -179,11 +179,11 @@
 
       /* ── TYPOGRAPHY (serif italic accents) ── */
       .serif {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
       }
 
       .italic {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-style: italic;
         font-weight: 400;
       }
@@ -208,12 +208,27 @@
       }
 
       .name-block h1 {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-weight: 700;
         font-size: 32px;
         letter-spacing: -0.4px;
         line-height: 1;
         margin-bottom: 6px;
+      }
+
+      .name-block h1 .name-chinese {
+        display: block;
+        font-family:
+          "EB Garamond",
+          "PingFang HK",
+          "PingFang TC",
+          "Noto Sans TC",
+          serif;
+        font-size: 0.62em;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        margin-top: 0.38em;
+        line-height: 1.25;
       }
 
       .name-block .role-line {
@@ -286,7 +301,7 @@
       }
 
       .section-head h2 {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-weight: 700;
         font-size: 11px;
         letter-spacing: 0.22em;
@@ -403,7 +418,7 @@
       }
 
       .role-title {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-size: 14px;
         font-weight: 700;
         color: var(--text);
@@ -420,7 +435,7 @@
       }
 
       .role-org {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-style: italic;
         font-weight: 400;
         color: var(--soft);
@@ -503,7 +518,7 @@
       }
 
       .pitch-block h3 {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-style: italic;
         font-weight: 400;
         font-size: 14px;
@@ -532,7 +547,7 @@
       }
 
       .skill-block h3 {
-        font-family: "Libre Baskerville", Georgia, serif;
+        font-family: "EB Garamond", serif;
         font-style: italic;
         font-weight: 400;
         font-size: 12.5px;
@@ -709,7 +724,10 @@
       <header class="letterhead">
         <img class="portrait" src="../src/avatar.webp" alt="Jerome Tse" />
         <div class="name-block">
-          <h1>Jerome Tse</h1>
+          <h1>
+            Jerome Tse
+            <span class="name-chinese" lang="zh-Hant">謝俊傑</span>
+          </h1>
           <div class="role-line">
             <strong>Educator, Engineer, Founder</strong><br />
             <span class="italic"
@@ -785,7 +803,7 @@
                 ></span
               >
             </div>
-            <div class="role-meta">Feb 2026 — Present</div>
+            <div class="role-meta">2025 — Present</div>
           </div>
           <div class="role-loc">Hong Kong</div>
           <div class="role-summary">
@@ -956,8 +974,8 @@
               AI, product, and engineering across professional channels.
             </li>
             <li>
-              <strong>Applied AI Academy</strong> — leading curriculum and
-              instruction for over 7,000 learners (2026 – present).
+              <strong>Applied AI Academy</strong> — leading engineering and
+              AI architecture for over 7,000 learners (2025 – present).
             </li>
           </ul>
         </div>
