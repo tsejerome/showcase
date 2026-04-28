@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jerome Tse — Curriculum Vitae</title>
+    <meta
+      name="description"
+      content="Jerome Tse — Educator, engineer, and founder. CTO & Co-founder of Applied AI Academy and Guest Lecturer at The University of Hong Kong."
+    />
+    <link rel="icon" href="../src/favicon.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #fbfaf7;
+        --paper: #ffffff;
+        --text: #1a1a1a;
+        --muted: #888;
+        --soft: #555;
+        --rule: #d8d4ca;
+        --rule-soft: #ece7dd;
+        --link-underline: #b8b1a3;
+        --accent: #5a4a2e;
+      }
+
+      html.dark {
+        --bg: #0e0e0d;
+        --paper: #131312;
+        --text: #e8e6df;
+        --muted: #6a6660;
+        --soft: #9a958a;
+        --rule: #2d2a25;
+        --rule-soft: #1f1d1a;
+        --link-underline: #555049;
+        --accent: #c9b58a;
+      }
+
+      html.dark nav {
+        background: rgba(14, 14, 13, 0.78);
+        border-bottom-color: rgba(45, 42, 37, 0.6);
+      }
+
+      html {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        font-size: 13px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(251, 250, 247, 0.78);
+        -webkit-backdrop-filter: blur(2px) saturate(1.4);
+        backdrop-filter: blur(2px) saturate(1.4);
+        border-bottom: 1px solid rgba(216, 212, 202, 0.5);
+        padding: 0 24px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: -0.2px;
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .hide-mobile {
+        display: flex;
+        align-items: center;
+      }
+
+      @media (max-width: 540px) {
+        nav {
+          padding: 0 16px;
+        }
+        .nav-links {
+          gap: 12px;
+        }
+        .nav-links .hide-mobile {
+          display: none;
+        }
+        .dark-toggle {
+          margin-left: 4px;
+          padding: 4px 8px;
+        }
+      }
+
+      .dark-toggle {
+        background: none;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        padding: 4px 12px;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.15s;
+        margin-left: 16px;
+      }
+      .dark-toggle:hover {
+        color: var(--text);
+        border-color: var(--text);
+      }
+
+      /* ── PAGE / DOCUMENT ── */
+      .doc {
+        max-width: 760px;
+        margin: 36px auto;
+        background: var(--paper);
+        border: 1px solid var(--rule-soft);
+        padding: 64px 72px;
+        box-shadow:
+          0 1px 0 rgba(0, 0, 0, 0.02),
+          0 8px 32px rgba(60, 50, 30, 0.04);
+      }
+
+      html.dark .doc {
+        box-shadow:
+          0 1px 0 rgba(0, 0, 0, 0.4),
+          0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 720px) {
+        .doc {
+          margin: 0;
+          border: none;
+          box-shadow: none;
+          padding: 36px 24px 80px;
+        }
+      }
+
+      /* ── TYPOGRAPHY (serif italic accents) ── */
+      .serif {
+        font-family: "Libre Baskerville", Georgia, serif;
+      }
+
+      .italic {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      /* ── LETTERHEAD ── */
+      .letterhead {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        gap: 28px;
+        align-items: center;
+        padding-bottom: 24px;
+        border-bottom: 2px solid var(--text);
+        margin-bottom: 4px;
+      }
+
+      .portrait {
+        width: 96px;
+        height: 96px;
+        border-radius: 2px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .name-block h1 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-weight: 700;
+        font-size: 32px;
+        letter-spacing: -0.4px;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .name-block .role-line {
+        font-size: 13px;
+        color: var(--soft);
+        line-height: 1.5;
+      }
+
+      .name-block .role-line strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      @media (max-width: 540px) {
+        .letterhead {
+          grid-template-columns: 72px 1fr;
+          gap: 18px;
+        }
+        .portrait {
+          width: 72px;
+          height: 72px;
+        }
+        .name-block h1 {
+          font-size: 26px;
+        }
+      }
+
+      /* meta strip */
+      .meta-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 0;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+        padding: 10px 0 28px;
+      }
+
+      .meta-strip span {
+        display: inline-flex;
+        align-items: center;
+      }
+      .meta-strip a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .meta-strip a:hover {
+        color: var(--text);
+      }
+      .meta-strip span + span::before {
+        content: "";
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--rule);
+        margin: 0 12px;
+        vertical-align: middle;
+      }
+
+      /* ── SECTION ── */
+      section {
+        margin-bottom: 36px;
+      }
+
+      .section-head {
+        margin-bottom: 16px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .section-head h2 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--text);
+      }
+
+      /* ── PROFILE ── */
+      .profile p {
+        font-size: 13.5px;
+        line-height: 1.75;
+        color: var(--text);
+      }
+
+      .profile p + p {
+        margin-top: 10px;
+      }
+
+      .profile .italic {
+        color: var(--accent);
+      }
+
+      .profile strong {
+        font-weight: 600;
+      }
+
+      /* ── CREDENTIAL LIST ── */
+      .creds {
+        list-style: none;
+        column-count: 2;
+        column-gap: 36px;
+      }
+
+      .creds li {
+        font-size: 12.5px;
+        line-height: 1.75;
+        padding-left: 16px;
+        position: relative;
+        break-inside: avoid;
+        color: var(--text);
+      }
+
+      .creds li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 11px;
+      }
+
+      .creds li a {
+        color: var(--text);
+        text-decoration: underline;
+        text-decoration-color: var(--link-underline);
+        text-underline-offset: 2px;
+      }
+      .creds li a:hover {
+        text-decoration-color: var(--text);
+      }
+
+      @media (max-width: 540px) {
+        .creds {
+          column-count: 1;
+        }
+      }
+
+      /* ── ROLES (traditional CV entry) ── */
+      .role {
+        padding: 0 0 22px;
+        margin-bottom: 22px;
+        border-bottom: 1px solid var(--rule-soft);
+      }
+
+      .role:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .role-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4px 16px;
+        align-items: baseline;
+        margin-bottom: 2px;
+      }
+
+      .role-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.1px;
+      }
+
+      .role-title a {
+        color: var(--text);
+        text-decoration: none;
+        border-bottom: 1px solid var(--link-underline);
+      }
+      .role-title a:hover {
+        border-bottom-color: var(--text);
+      }
+
+      .role-org {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--soft);
+      }
+
+      .role-meta {
+        font-size: 11px;
+        font-variant-numeric: tabular-nums;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .role-loc {
+        font-size: 11.5px;
+        color: var(--muted);
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+
+      .role-summary {
+        font-size: 12.5px;
+        color: var(--soft);
+        line-height: 1.6;
+        margin: 6px 0 10px;
+      }
+
+      .role ul {
+        list-style: none;
+        margin-top: 8px;
+      }
+
+      .role li {
+        font-size: 12.5px;
+        line-height: 1.65;
+        color: var(--text);
+        padding-left: 18px;
+        position: relative;
+      }
+
+      .role li + li {
+        margin-top: 5px;
+      }
+
+      .role li::before {
+        content: "·";
+        position: absolute;
+        left: 6px;
+        top: -1px;
+        font-weight: 700;
+        color: var(--soft);
+      }
+
+      .role li a {
+        color: var(--text);
+        text-decoration: underline;
+        text-decoration-color: var(--link-underline);
+        text-underline-offset: 2px;
+      }
+      .role li a:hover {
+        text-decoration-color: var(--text);
+      }
+
+      @media (max-width: 540px) {
+        .role-head {
+          grid-template-columns: 1fr;
+        }
+        .role-meta {
+          text-align: left;
+        }
+      }
+
+      /* ── APPLIED AI ACADEMY (subordinate two-block) ── */
+      .pitch-blocks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        padding: 4px 0 4px;
+      }
+
+      .pitch-block h3 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+
+      .pitch-block p {
+        font-size: 12.5px;
+        line-height: 1.7;
+        color: var(--text);
+      }
+
+      @media (max-width: 540px) {
+        .pitch-blocks {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+      }
+
+      /* ── SKILLS ── */
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 36px;
+      }
+
+      .skill-block h3 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12.5px;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
+
+      .skill-block p {
+        font-size: 12.5px;
+        line-height: 1.7;
+        color: var(--text);
+      }
+
+      @media (max-width: 540px) {
+        .skills {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+      }
+
+      /* ── AWARDS ── */
+      .awards {
+        list-style: none;
+      }
+
+      .awards li {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4px 16px;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        font-size: 12.5px;
+        align-items: baseline;
+      }
+
+      .awards li:last-child {
+        border-bottom: none;
+      }
+
+      .awards .a-meta {
+        font-size: 11px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      /* ── PRINT ── */
+      @media print {
+        nav,
+        footer,
+        .dark-toggle {
+          display: none;
+        }
+        .doc {
+          margin: 0;
+          padding: 0;
+          max-width: none;
+          border: none;
+          box-shadow: none;
+          background: #fff;
+        }
+        html {
+          font-size: 10.5px;
+          background: #fff;
+          color: #000;
+        }
+        .role {
+          break-inside: avoid;
+        }
+        section {
+          break-inside: avoid;
+        }
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid var(--rule-soft);
+        padding: 24px;
+        max-width: 760px;
+        margin: 24px auto 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      footer a {
+        color: var(--muted);
+        text-decoration: underline;
+        text-decoration-color: var(--link-underline);
+        text-underline-offset: 2px;
+      }
+
+      footer a:hover {
+        color: var(--text);
+      }
+
+      footer .italic {
+        font-size: 12px;
+        color: var(--soft);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="/">Jerome.</a>
+      <ul class="nav-links">
+        <li class="hide-mobile">
+          <a href="https://twitter.com/tsejerome" target="_blank">X</a>
+        </li>
+        <li class="hide-mobile">
+          <a href="https://linkedin.com/in/tse-jerome" target="_blank">IN</a>
+        </li>
+        <li class="hide-mobile">
+          <a href="https://jupitrr.com" target="_blank">Jupitrr AI</a>
+        </li>
+        <li><a href="/">Timeline</a></li>
+        <li><a href="javascript:window.print()">Print</a></li>
+        <li><button class="dark-toggle" id="dark-toggle">Dark</button></li>
+      </ul>
+    </nav>
+
+    <article class="doc">
+      <!-- ── LETTERHEAD ─────────────────────────────────────────── -->
+      <header class="letterhead">
+        <img class="portrait" src="../src/avatar.webp" alt="Jerome Tse" />
+        <div class="name-block">
+          <h1>Jerome Tse</h1>
+          <div class="role-line">
+            <strong>Educator, Engineer, Founder</strong><br />
+            <span class="italic"
+              >CTO &amp; Co-founder, Applied AI Academy · Guest Lecturer, The
+              University of Hong Kong</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <div class="meta-strip">
+        <span>Hong Kong SAR· Toronto</span>
+        <span
+          ><a href="mailto:hello@appliedaiacademy.app"
+            >hello@appliedaiacademy.app</a
+          ></span
+        >
+        <span
+          ><a href="https://twitter.com/tsejerome" target="_blank"
+            >@tsejerome</a
+          ></span
+        >
+        <span
+          ><a href="https://linkedin.com/in/tse-jerome" target="_blank"
+            >linkedin.com/in/tse-jerome</a
+          ></span
+        >
+      </div>
+
+      <!-- ── PROFILE ─────────────────────────────────────────────── -->
+      <section class="profile">
+        <div class="section-head"><h2>Profile</h2></div>
+        <p>
+          Engineer and founder turned educator. Currently CTO &amp; co-founder
+          of <strong>Applied AI Academy</strong>, a mobile learning platform
+          helping working professionals build practical AI literacy in ten
+          minutes a day. Over <strong>7,000 students and mentees</strong> in the
+          first six months.
+        </p>
+        <p>
+          Guest Lecturer at <strong>The University of Hong Kong</strong> on AI
+          and entrepreneurship. Previously co-founded
+          <strong>Freehunter</strong> (Hong Kong's largest freelance
+          marketplace, 100,000+ registered users) and
+          <strong>Jupitrr AI</strong> (an AI video platform serving 170,000+
+          users worldwide).
+        </p>
+      </section>
+
+      <!-- ── CREDENTIALS ────────────────────────────────────────── -->
+      <section>
+        <div class="section-head"><h2>Credentials</h2></div>
+        <ul class="creds">
+          <li>Guest Lecturer · The University of Hong Kong</li>
+          <li>7,000+ students &amp; mentees at Applied AI Academy</li>
+          <li>
+            Founded Hong Kong's largest freelance marketplace —
+            <a href="https://freehunter.hk" target="_blank">Freehunter HK</a>
+            (100,000+ users)
+          </li>
+          <li>
+            Shipped AI products used worldwide —
+            <a href="https://jupitrr.com" target="_blank">Jupitrr AI</a>
+            (170,000+ users)
+          </li>
+          <li>The Loop HK's 30 Under 30, Class of 2019</li>
+          <li>Raised over US$3M in venture funding</li>
+        </ul>
+      </section>
+
+      <!-- ── APPLIED AI ACADEMY ─────────────────────────────────── -->
+      <section>
+        <div class="section-head"><h2>Applied AI Academy</h2></div>
+        <p
+          style="
+            font-size: 13.5px;
+            line-height: 1.75;
+            color: var(--text);
+            margin-bottom: 18px;
+          "
+        >
+          I'm building a school for the AI-native builder generation:
+          <span class="italic" style="color: var(--accent)"
+            >7,000+ students</span
+          >
+          in our first six months, all chasing the same thing — leverage.
+        </p>
+        <div class="pitch-blocks">
+          <div class="pitch-block">
+            <h3>The Problem</h3>
+            <p>
+              Colleagues who use AI ship twice the output in half the time — and
+              those who don't are quietly outpaced. ChatGPT hands you a blank
+              box. YouTube is aimed at developers. Corporate L&amp;D is six
+              months behind. Professionals don't want courses — they want
+              leverage.
+            </p>
+          </div>
+          <div class="pitch-block">
+            <h3>Our Solution</h3>
+            <p>
+              Ten minutes a day. Lessons tuned to your role, with a built-in AI
+              coach available whenever you're stuck. Curriculum grounded in real
+              workplace tasks — and now expanding into in-person workshops for
+              teams and organisations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EXPERIENCE ─────────────────────────────────────────── -->
+      <section>
+        <div class="section-head"><h2>Experience</h2></div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">
+              CTO &amp; Co-founder,
+              <span class="role-org">Applied AI Academy</span>
+            </div>
+            <div class="role-meta">Oct 2025 — Present</div>
+          </div>
+          <div class="role-loc">Toronto · Remote</div>
+          <div class="role-summary">
+            Mobile learning platform delivering practical AI training to working
+            professionals through ten-minute daily lessons grounded in real
+            workplace tasks.
+          </div>
+          <ul>
+            <li>
+              Grew the learner base to over <strong>7,000 students</strong>
+              within the first six months, entirely through organic channels.
+            </li>
+            <li>
+              Built the mobile application end-to-end, including daily lessons,
+              an embedded AI coach, and progress tracking based on measurable
+              hours saved.
+            </li>
+            <li>
+              Designed the curriculum around real workplace scenarios in
+              consultation with professionals across multiple industries.
+            </li>
+            <li>
+              Lead the engineering and AI architecture, including lesson
+              generation, the in-app coaching system, and personalisation by
+              role and experience level.
+            </li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">
+              Co-founder &amp; CTO,
+              <span class="role-org"
+                ><a href="https://jupitrr.com" target="_blank"
+                  >Jupitrr AI</a
+                ></span
+              >
+            </div>
+            <div class="role-meta">2021 — Present</div>
+          </div>
+          <div class="role-loc">Hong Kong → Toronto</div>
+          <div class="role-summary">
+            AI-powered video production platform serving creators,
+            communicators, and educators worldwide.
+          </div>
+          <ul>
+            <li>
+              Grew the platform to over
+              <strong>170,000 registered users</strong> across more than 100
+              countries.
+            </li>
+            <li>
+              Recognised on Product Hunt as Product of the Day and Product of
+              the Week across multiple launches.
+            </li>
+            <li>
+              Built
+              <a href="https://jupitrr.com/levio" target="_blank">Levio</a>, a
+              production AI video agent, with a small senior engineering team.
+            </li>
+            <li>
+              Led the company's strategic transition from social-video tooling
+              into a unified AI video platform.
+            </li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">
+              Co-founder &amp; CTO,
+              <span class="role-org"
+                ><a href="https://freehunter.hk" target="_blank"
+                  >Freehunter.hk</a
+                ></span
+              >
+            </div>
+            <div class="role-meta">2018 — 2022</div>
+          </div>
+          <div class="role-loc">Hong Kong</div>
+          <div class="role-summary">
+            Hong Kong's largest freelance marketplace, connecting independent
+            professionals with businesses across the region.
+          </div>
+          <ul>
+            <li>
+              Grew to over <strong>100,000 registered users</strong>, equivalent
+              to roughly 1.5 per cent of the Hong Kong population.
+            </li>
+            <li>
+              Facilitated more than
+              <strong>US$30 million in transactions</strong> at peak.
+            </li>
+            <li>
+              Raised angel investment from senior human-resources executives of
+              Hong Kong-listed companies; expanded operations into Taiwan.
+            </li>
+            <li>
+              Received a formal acquisition offer in 2021, reaching share
+              purchase agreement stage.
+            </li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">
+              IT Consultant, <span class="role-org">Maple Couple Study</span>
+            </div>
+            <div class="role-meta">Dec 2020 — Mar 2022</div>
+          </div>
+          <div class="role-loc">Toronto · EdTech</div>
+          <div class="role-summary">
+            Engaged by a Toronto-based EdTech company to build software for
+            finding schools across the GTA. Led the remote design and
+            development team end-to-end.
+          </div>
+          <ul>
+            <li>
+              Built the school-discovery platform from scratch — search,
+              filtering, and admissions data.
+            </li>
+            <li>
+              Led a distributed design + engineering team across multiple time
+              zones.
+            </li>
+            <li>Owned product, technical architecture, and delivery.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">
+              Software Consultant,
+              <span class="role-org">Nike Limited &amp; Toys"R"Us</span>
+            </div>
+          </div>
+          <div class="role-loc">Hong Kong · Enterprise</div>
+          <div class="role-summary">
+            Delivered custom internal software for two global retail brands as
+            an external consultant.
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TEACHING ───────────────────────────────────────────── -->
+      <section>
+        <div class="section-head"><h2>Teaching &amp; Speaking</h2></div>
+        <div class="role">
+          <ul>
+            <li>
+              <strong>Guest Lecturer, The University of Hong Kong</strong> —
+              invited speaker on entrepreneurship and applied AI.
+            </li>
+            <li>
+              <strong>Applied AI Academy</strong> — leading curriculum and
+              instruction for over 7,000 students and mentees (2025 – present).
+            </li>
+            <li>
+              <strong>Mentorship &amp; advisory</strong> — regular office hours
+              and one-to-one reviews with early-stage builders and product
+              teams.
+            </li>
+            <li>
+              <strong>Public writing</strong> — ongoing essays and commentary on
+              AI, product, and engineering across professional channels.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ── SKILLS ─────────────────────────────────────────────── -->
+      <section>
+        <div class="section-head"><h2>Skills</h2></div>
+        <div class="skills">
+          <div class="skill-block">
+            <h3>Teaching &amp; Curriculum</h3>
+            <p>
+              Curriculum design for working professionals · cohort and community
+              operations · one-to-one mentorship · public speaking.
+            </p>
+          </div>
+          <div class="skill-block">
+            <h3>AI &amp; Applied Research</h3>
+            <p>
+              Claude · OpenAI · Gemini · Whisper · prompt engineering and agent
+              orchestration · evaluation and safety practices for learning
+              applications.
+            </p>
+          </div>
+          <div class="skill-block">
+            <h3>Engineering</h3>
+            <p>
+              TypeScript · Node.js · React · Next.js · Python for data and
+              machine learning pipelines · PostgreSQL · vector databases · edge
+              runtimes.
+            </p>
+          </div>
+          <div class="skill-block">
+            <h3>Product &amp; Operations</h3>
+            <p>
+              Product strategy · organic growth and search optimisation ·
+              cross-functional team leadership · fundraising and stakeholder
+              management.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EDUCATION ──────────────────────────────────────────── -->
+      <section>
+        <div class="section-head"><h2>Schools &amp; Awards</h2></div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">
+              <a href="https://www.hku.hk" target="_blank"
+                >The University of Hong Kong</a
+              >
+            </div>
+            <div class="role-meta">2015 — 2019</div>
+          </div>
+          <div class="role-loc">Hong Kong</div>
+          <div class="role-summary">
+            Bachelor of Business Administration · Double major in Information
+            Systems and Computer Science.
+          </div>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">La Salle College</div>
+            <div class="role-meta">2009 — 2015</div>
+          </div>
+          <div class="role-loc">Hong Kong</div>
+        </div>
+
+        <ul class="awards">
+          <li>
+            <span
+              ><strong>The Loop HK's 30 Under 30</strong>, Class of 2019</span
+            ><span class="a-meta">2019</span>
+          </li>
+          <li>
+            <span
+              ><strong>Product Hunt — Product of the Week &amp; Day</strong>
+              (Jupitrr AI)</span
+            ><span class="a-meta">2023 – 2025</span>
+          </li>
+          <li>
+            <span
+              ><strong>HK Market Leader</strong> — Freehunter, 1.5% of
+              population registered</span
+            ><span class="a-meta">2020</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── REFERENCES ─────────────────────────────────────────── -->
+      <section>
+        <div class="section-head"><h2>References</h2></div>
+        <p style="font-size: 12.5px; line-height: 1.7; color: var(--soft)">
+          Available on request. For ongoing work, see
+          <a
+            href="https://jupitrr.com"
+            target="_blank"
+            style="color: var(--text)"
+            >jupitrr.com</a
+          >
+          and
+          <a
+            href="https://freehunter.hk"
+            target="_blank"
+            style="color: var(--text)"
+            >freehunter.hk</a
+          >; correspondence to
+          <a href="mailto:hello@appliedaiacademy.app" style="color: var(--text)"
+            >hello@appliedaiacademy.app</a
+          >.
+        </p>
+      </section>
+    </article>
+
+    <footer>
+      <span>© 2026 <a href="/">Jerome Tse</a></span>
+      <span class="italic">Curriculum Vitae</span>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("dark-toggle");
+      const isDark = () => document.documentElement.classList.contains("dark");
+      toggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        toggle.textContent = isDark() ? "Light" : "Dark";
+      });
+    </script>
+  </body>
+</html>
