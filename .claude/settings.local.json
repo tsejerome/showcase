@@ -4,7 +4,13 @@
       "Bash(grep *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git mv *)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(echo \"started pid $!\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/zoe-wong-cv-zh/)",
+      "Bash(kill 25690)",
+      "Bash(awk 'NR>=310 && NR<=325' /Users/tsejerome/Desktop/showcase/zoe-wong-cv-zh/index.html)"
     ]
   }
 }
