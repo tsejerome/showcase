@@ -546,16 +546,61 @@
         color: var(--text);
       }
 
+      .skill-block.feature {
+        grid-column: 1 / -1;
+        padding: 14px 0 4px;
+        border-top: 1px solid var(--rule-soft);
+        border-bottom: 1px solid var(--rule-soft);
+      }
+
+      .skill-stack {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 28px;
+        margin-top: 6px;
+      }
+
+      .skill-stack li {
+        font-size: 12.5px;
+        line-height: 1.65;
+        color: var(--text);
+        padding-left: 12px;
+        position: relative;
+      }
+
+      .skill-stack li::before {
+        content: "·";
+        position: absolute;
+        left: 2px;
+        top: -1px;
+        font-weight: 700;
+        color: var(--soft);
+      }
+
+      .skill-stack strong {
+        font-weight: 600;
+        color: var(--text);
+      }
+
       @media (max-width: 540px) {
         .skills {
           grid-template-columns: 1fr;
           gap: 14px;
+        }
+        .skill-stack {
+          grid-template-columns: 1fr;
         }
       }
 
       /* ── AWARDS ── */
       .awards {
         list-style: none;
+      }
+
+      .no-dividers .role,
+      .no-dividers .awards li {
+        border-bottom: none;
       }
 
       .awards li {
@@ -701,13 +746,15 @@
           Engineer and founder turned educator. Currently CTO &amp; co-founder
           of <strong>Applied AI Academy</strong>, a mobile learning platform
           helping working professionals build practical AI literacy in ten
-          minutes a day. Over <strong>7,000 learners</strong> in the first three
-          months.
+          minutes a day. 
         </p>
         <ul>
           <li>
             Guest Lecturer at <strong>The University of Hong Kong</strong> on AI
             and entrepreneurship.
+          </li>
+          <li>
+            7,000+ students & mentees in 3 months at <strong></strong>Applied AI Academy</strong>
           </li>
           <li>
             Previously co-founded <strong>Freehunter</strong> — Hong Kong's
@@ -716,6 +763,10 @@
           <li>
             Previously co-founded <strong>Jupitrr AI</strong> — an AI video
             platform serving 170,000+ users worldwide.
+          </li>
+          <li>
+            Raised over <strong>HK$3M in venture funding</strong> across
+            previous ventures.
           </li>
         </ul>
       </section>
@@ -931,13 +982,45 @@
               applications.
             </p>
           </div>
-          <div class="skill-block">
+          <div class="skill-block feature">
             <h3>Engineering</h3>
-            <p>
-              TypeScript · Node.js · React · Next.js · Python for data and
-              machine learning pipelines · PostgreSQL · vector databases · edge
-              runtimes.
-            </p>
+            <ul class="skill-stack">
+              <li>
+                <strong>Mobile</strong> — React Native, Expo, native iOS and
+                Android integrations, push notifications, in-app purchases,
+                offline-first sync.
+              </li>
+              <li>
+                <strong>Frontend</strong> — TypeScript, React, Next.js, Tailwind,
+                animation and motion, accessible component systems, complex
+                editor and canvas UIs.
+              </li>
+              <li>
+                <strong>Backend &amp; APIs</strong> — Node.js, Python, REST and
+                tRPC, queues and background workers, authentication, payments,
+                webhooks, internationalisation.
+              </li>
+              <li>
+                <strong>AI infrastructure</strong> — Claude, OpenAI, Gemini, and
+                Whisper in production · agent orchestration · retrieval and
+                vector search · evaluation harnesses · prompt and model
+                versioning.
+              </li>
+              <li>
+                <strong>Data</strong> — PostgreSQL, Supabase, Firebase, Redis,
+                vector databases, analytics pipelines, A/B experimentation.
+              </li>
+              <li>
+                <strong>Cloud &amp; DevOps</strong> — AWS, GCP, Vercel,
+                Cloudflare Workers and edge runtimes, CI/CD, observability,
+                cost-conscious autoscaling.
+              </li>
+              <li>
+                <strong>Practice</strong> — small-team leadership, code review
+                culture, AI-assisted development workflows, shipping
+                production software for over a decade.
+              </li>
+            </ul>
           </div>
           <div class="skill-block">
             <h3>Product &amp; Operations</h3>
@@ -951,7 +1034,7 @@
       </section>
 
       <!-- ── EDUCATION ──────────────────────────────────────────── -->
-      <section>
+      <section class="no-dividers">
         <div class="section-head"><h2>Schools &amp; Awards</h2></div>
 
         <div class="role">
