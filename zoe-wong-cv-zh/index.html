@@ -1,444 +1,645 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>履歷 · 黃可盈 Wong Ho Ying (Zoe)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --page: #FFFFFF;
-    --desk: #E8E3D8;
-    --ink: #14110D;
-    --ink-soft: #3A322A;
-    --ink-mute: #6B6256;
-    --rule: #C7BDA8;
-    --rule-light: #E5DECF;
-    --accent: #6B1F30;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>履歷 · 黃可盈 Wong Ho Ying (Zoe)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --page: #ffffff;
+        --desk: #e8e3d8;
+        --ink: #14110d;
+        --ink-soft: #3a322a;
+        --ink-mute: #6b6256;
+        --rule: #c7bda8;
+        --rule-light: #e5decf;
+        --accent: #6b1f30;
+      }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  html, body {
-    background: var(--desk);
-    color: var(--ink);
-    font-family: 'Noto Serif TC', 'EB Garamond', 'PingFang HK', 'PingFang TC', 'Microsoft JhengHei', serif;
-    font-weight: 400;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
+      html,
+      body {
+        background: var(--desk);
+        color: var(--ink);
+        font-family:
+          "Noto Serif TC", "EB Garamond", "PingFang HK", "PingFang TC",
+          "Microsoft JhengHei", serif;
+        font-weight: 400;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
 
-  .page {
-    background: var(--page);
-    max-width: 820px;
-    margin: 40px auto;
-    padding: 56px 64px 52px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08);
-    position: relative;
-  }
+      .page {
+        background: var(--page);
+        max-width: 820px;
+        margin: 40px auto;
+        padding: 56px 64px 52px;
+        box-shadow:
+          0 4px 32px rgba(0, 0, 0, 0.12),
+          0 1px 4px rgba(0, 0, 0, 0.08);
+        position: relative;
+      }
 
-  .lang-toggle {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    font-family: 'EB Garamond', serif;
-    font-size: 10pt;
-    color: var(--ink-mute);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--rule);
-    letter-spacing: 0.08em;
-  }
-  .lang-toggle:hover { color: var(--accent); border-bottom-color: var(--accent); }
+      .lang-toggle {
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        font-family: "EB Garamond", serif;
+        font-size: 10pt;
+        color: var(--ink-mute);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--rule);
+        letter-spacing: 0.08em;
+      }
+      .lang-toggle:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
 
-  .header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: start;
-    padding-bottom: 16px;
-    border-bottom: 2px solid var(--ink);
-    margin-bottom: 4px;
-  }
+      .header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: start;
+        padding-bottom: 16px;
+        border-bottom: 2px solid var(--ink);
+        margin-bottom: 4px;
+      }
 
-  .name {
-    font-family: 'Noto Serif TC', 'EB Garamond', serif;
-    font-weight: 600;
-    font-size: 30pt;
-    line-height: 1.1;
-    letter-spacing: 0.04em;
-    color: var(--ink);
-    margin-bottom: 4px;
-  }
-  .name .romanised {
-    display: block;
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14pt;
-    color: var(--ink-soft);
-    margin-top: 6px;
-    letter-spacing: 0.02em;
-  }
+      .name {
+        font-family: "Noto Serif TC", "EB Garamond", serif;
+        font-weight: 600;
+        font-size: 30pt;
+        line-height: 1.1;
+        letter-spacing: 0.04em;
+        color: var(--ink);
+        margin-bottom: 4px;
+      }
+      .name .romanised {
+        display: block;
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14pt;
+        color: var(--ink-soft);
+        margin-top: 6px;
+        letter-spacing: 0.02em;
+      }
 
-  .tagline {
-    font-family: 'EB Garamond', 'Noto Serif TC', serif;
-    font-weight: 400;
-    font-size: 12.5pt;
-    color: var(--accent);
-    line-height: 1.4;
-    max-width: 460px;
-    margin-top: 6px;
-  }
+      .tagline {
+        font-family: "EB Garamond", "Noto Serif TC", serif;
+        font-weight: 400;
+        font-size: 12.5pt;
+        color: var(--accent);
+        line-height: 1.4;
+        max-width: 460px;
+        margin-top: 6px;
+      }
 
-  .portrait {
-    width: 100px;
-    height: 128px;
-    overflow: hidden;
-    border: 1px solid var(--rule);
-    background: var(--rule-light);
-  }
-  .portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 76% 28%;
-    filter: grayscale(0.15) contrast(1.02);
-  }
+      .portrait {
+        width: 100px;
+        height: 128px;
+        overflow: hidden;
+        border: 1px solid var(--rule);
+        background: var(--rule-light);
+      }
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 76% 28%;
+        filter: grayscale(0.15) contrast(1.02);
+      }
 
-  .contact-bar {
-    border-bottom: 1px solid var(--rule);
-    padding: 10px 0 12px;
-    margin-bottom: 22px;
-    font-size: 10.5pt;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 14px;
-    align-items: center;
-  }
-  .contact-bar .sep { color: var(--rule); font-style: italic; }
-  .contact-bar a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--rule); }
-  .contact-bar a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+      .contact-bar {
+        padding: 10px 0 12px;
+        margin-bottom: 12px;
+        font-size: 10.5pt;
+        color: var(--ink-soft);
+        line-height: 1.7;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+        align-items: center;
+      }
+      .contact-bar .sep {
+        color: var(--rule);
+        font-style: italic;
+      }
+      .contact-bar a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--rule);
+      }
+      .contact-bar a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
 
-  .role li a, .role li a:visited,
-  .project-desc a, .project-desc a:visited,
-  .profile-text a, .profile-text a:visited {
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 2px;
-  }
-  .role li a:hover, .project-desc a:hover, .profile-text a:hover {
-    color: var(--accent);
-    text-decoration-color: var(--accent);
-  }
+      .role li a,
+      .role li a:visited,
+      .project-desc a,
+      .project-desc a:visited,
+      .profile-text a,
+      .profile-text a:visited {
+        color: var(--ink);
+        text-decoration: underline;
+        text-decoration-color: var(--rule);
+        text-underline-offset: 2px;
+      }
+      .role li a:hover,
+      .project-desc a:hover,
+      .profile-text a:hover {
+        color: var(--accent);
+        text-decoration-color: var(--accent);
+      }
 
-  section { margin-bottom: 20px; page-break-inside: avoid; }
+      section {
+        margin-bottom: 20px;
+      }
 
-  h2.section-title {
-    font-family: 'EB Garamond', 'Noto Serif TC', serif;
-    font-weight: 600;
-    font-size: 11.5pt;
-    letter-spacing: 0.16em;
-    color: var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 4px;
-    margin-bottom: 10px;
-  }
+      h2.section-title {
+        font-family: "EB Garamond", "Noto Serif TC", serif;
+        font-weight: 600;
+        font-size: 11.5pt;
+        letter-spacing: 0.16em;
+        color: var(--ink);
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 4px;
+        margin-bottom: 10px;
+      }
 
-  .profile-text {
-    font-size: 12pt;
-    line-height: 1.75;
-    color: var(--ink-soft);
-    text-align: justify;
-  }
-  .profile-text strong { font-weight: 600; color: var(--ink); }
+      .profile-text {
+        font-size: 12pt;
+        line-height: 1.75;
+        color: var(--ink-soft);
+        text-align: justify;
+      }
+      .profile-text strong {
+        font-weight: 600;
+        color: var(--ink);
+      }
 
-  .role { margin-bottom: 14px; page-break-inside: avoid; }
-  .role:last-child { margin-bottom: 0; }
+      .role {
+        margin-bottom: 14px;
+        page-break-inside: avoid;
+      }
+      .role:last-child {
+        margin-bottom: 0;
+      }
 
-  .role-head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    align-items: baseline;
-  }
-  .role-title {
-    font-family: 'Noto Serif TC', 'EB Garamond', serif;
-    font-weight: 600;
-    font-size: 12pt;
-    color: var(--ink);
-    line-height: 1.3;
-  }
-  .role-date {
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    font-size: 10.5pt;
-    color: var(--ink-mute);
-    white-space: nowrap;
-  }
-  .role-org {
-    font-family: 'EB Garamond', 'Noto Serif TC', serif;
-    font-style: italic;
-    font-size: 11pt;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-  .role-org .loc { font-style: normal; color: var(--ink-mute); font-size: 10pt; }
-  .role ul { list-style: none; margin-top: 3px; }
-  .role li {
-    font-size: 11.5pt;
-    line-height: 1.7;
-    color: var(--ink-soft);
-    padding-left: 16px;
-    position: relative;
-    margin-bottom: 2px;
-    text-align: justify;
-  }
-  .role li::before {
-    content: '·';
-    position: absolute;
-    left: 4px;
-    top: -3px;
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 16pt;
-  }
-  .role li strong { font-weight: 600; color: var(--ink); }
+      .role-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: baseline;
+      }
+      .role-title {
+        font-family: "Noto Serif TC", "EB Garamond", serif;
+        font-weight: 600;
+        font-size: 12pt;
+        color: var(--ink);
+        line-height: 1.3;
+      }
+      .role-date {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 10.5pt;
+        color: var(--ink-mute);
+        white-space: nowrap;
+      }
+      .role-org {
+        font-family: "EB Garamond", "Noto Serif TC", serif;
+        font-style: italic;
+        font-size: 11pt;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
+      .role-org .loc {
+        font-style: normal;
+        color: var(--ink-mute);
+        font-size: 10pt;
+      }
+      .role ul {
+        list-style: none;
+        margin-top: 3px;
+      }
+      .role li {
+        font-size: 11.5pt;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 2px;
+        text-align: justify;
+      }
+      .role li::before {
+        content: "·";
+        position: absolute;
+        left: 4px;
+        top: -3px;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 16pt;
+      }
+      .role li strong {
+        font-weight: 600;
+        color: var(--ink);
+      }
 
-  .edu-item { margin-bottom: 10px; }
-  .edu-head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    align-items: baseline;
-  }
-  .edu-degree { font-weight: 600; font-size: 11.5pt; color: var(--ink); }
-  .edu-school { font-style: italic; font-size: 11pt; color: var(--accent); }
-  .edu-detail { font-size: 10.5pt; color: var(--ink-mute); font-style: italic; margin-top: 2px; }
+      .edu-item {
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+      }
+      .edu-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: baseline;
+      }
+      .edu-degree {
+        font-weight: 600;
+        font-size: 11.5pt;
+        color: var(--ink);
+      }
+      .edu-school {
+        font-style: italic;
+        font-size: 11pt;
+        color: var(--accent);
+      }
+      .edu-detail {
+        font-size: 10.5pt;
+        color: var(--ink-mute);
+        font-style: italic;
+        margin-top: 2px;
+      }
 
-  .project { margin-bottom: 10px; }
-  .project-head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    align-items: baseline;
-    margin-bottom: 2px;
-  }
-  .project-name { font-weight: 600; font-size: 11.5pt; color: var(--ink); }
-  .project-role { font-style: italic; font-size: 10.5pt; color: var(--ink-mute); }
-  .project-desc { font-size: 11pt; color: var(--ink-soft); line-height: 1.65; text-align: justify; }
-  .project-desc strong { font-weight: 600; color: var(--ink); }
+      .project {
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+      }
+      .project-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: baseline;
+        margin-bottom: 2px;
+      }
+      .project-name {
+        font-weight: 600;
+        font-size: 11.5pt;
+        color: var(--ink);
+      }
+      .project-role {
+        font-style: italic;
+        font-size: 10.5pt;
+        color: var(--ink-mute);
+      }
+      .project-desc {
+        font-size: 11pt;
+        color: var(--ink-soft);
+        line-height: 1.65;
+        text-align: justify;
+      }
+      .project-desc strong {
+        font-weight: 600;
+        color: var(--ink);
+      }
 
-  .skill-line {
-    font-size: 11pt;
-    line-height: 1.65;
-    color: var(--ink-soft);
-    margin-bottom: 5px;
-  }
-  .skill-line .cat { font-weight: 600; color: var(--ink); font-style: italic; }
+      .skill-line {
+        font-size: 11pt;
+        line-height: 1.65;
+        color: var(--ink-soft);
+        margin-bottom: 5px;
+      }
+      .skill-line .cat {
+        font-weight: 600;
+        color: var(--ink);
+        font-style: italic;
+      }
 
-  .compact-row {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 12px;
-    margin-bottom: 4px;
-    font-size: 11pt;
-    color: var(--ink-soft);
-  }
-  .compact-row .cat { font-weight: 600; color: var(--ink); font-style: italic; }
+      .compact-row {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 12px;
+        margin-bottom: 4px;
+        font-size: 11pt;
+        color: var(--ink-soft);
+      }
+      .compact-row .cat {
+        font-weight: 600;
+        color: var(--ink);
+        font-style: italic;
+      }
 
-  .page-footer {
-    margin-top: 32px;
-    padding-top: 12px;
-    border-top: 1px solid var(--rule);
-    font-size: 9.5pt;
-    font-style: italic;
-    color: var(--ink-mute);
-    text-align: center;
-    letter-spacing: 0.04em;
-  }
+      .page-footer {
+        margin-top: 32px;
+        padding-top: 12px;
+        border-top: 1px solid var(--rule);
+        font-size: 9.5pt;
+        font-style: italic;
+        color: var(--ink-mute);
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
 
-  @media (max-width: 860px) {
-    .page { margin: 0; padding: 32px 22px; box-shadow: none; }
-    .name { font-size: 24pt; }
-    .header { grid-template-columns: 1fr; }
-    .portrait { width: 84px; height: 108px; order: -1; }
-    .role-head, .edu-head, .project-head { grid-template-columns: 1fr; gap: 0; }
-    .compact-row { grid-template-columns: 1fr; gap: 0; }
-    .lang-toggle { position: static; display: inline-block; margin-bottom: 12px; }
-  }
+      @media (max-width: 860px) {
+        .page {
+          margin: 0;
+          padding: 32px 22px;
+          box-shadow: none;
+        }
+        .name {
+          font-size: 24pt;
+        }
+        .header {
+          grid-template-columns: 1fr;
+        }
+        .portrait {
+          width: 84px;
+          height: 108px;
+          order: -1;
+        }
+        .role-head,
+        .edu-head,
+        .project-head {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .compact-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .lang-toggle {
+          position: static;
+          display: inline-block;
+          margin-bottom: 12px;
+        }
+      }
 
-  @media print {
-    @page { size: A4; margin: 14mm 16mm; }
-    html, body { background: white; }
-    .page { max-width: 100%; margin: 0; padding: 0; box-shadow: none; }
-    .lang-toggle { display: none; }
-    a { color: var(--ink-soft) !important; border: none !important; }
-  }
-</style>
-</head>
-<body>
+      @media print {
+        html,
+        body {
+          background: white;
+        }
+        .page {
+          max-width: 100%;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+        }
+        .lang-toggle {
+          display: none;
+        }
+        a {
+          color: var(--ink-soft) !important;
+          border: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="lang-toggle" href="/zoe-wong-cv.html">EN ↗</a>
 
-<div class="page">
-  <a class="lang-toggle" href="/zoe-wong-cv.html">EN ↗</a>
-
-  <header class="header">
-    <div>
-      <h1 class="name">
-        黃可盈
-        <span class="romanised">Wong Ho Ying (Zoe)</span>
-      </h1>
-      <div class="tagline">Applied AI Academy 聯合創辦人兼 Educator-in-Residence</div>
-    </div>
-    <div class="portrait">
-      <img src="/cover.png" alt="黃可盈 Wong Ho Ying" />
-    </div>
-  </header>
-
-  <div class="contact-bar">
-    <span>+852 9687 8036</span>
-    <span class="sep">·</span>
-    <a href="mailto:wonghoyingzoe@gmail.com">wonghoyingzoe@gmail.com</a>
-    <span class="sep">·</span>
-    <span>香港</span>
-  </div>
-
-  <section>
-    <h2 class="section-title">個人簡介</h2>
-    <p class="profile-text">
-      註冊教師，<strong>逾十年課堂與課程設計經驗</strong>，及七年企業軟件、教育科技與早期創業的產品經理資歷。<strong>Applied AI Academy</strong>聯合創辦人，協助在職人士在工作、生活與學習中靈活運用 AI；曾編寫 AI 素養課程，部署於 <strong>55+ 學校</strong>，覆蓋 <strong>43,000+ 學生與 1,900+ 教師</strong>。雙語內容創作者「<strong>Zoe 蘇姨老師</strong>」，過去 30 天累計 <strong>30 萬+ 觀看</strong>，社交媒體跨平台 <strong>8,000+ 追蹤</strong>。持有香港中文大學教育文憑（PGDE）及香港大學工商管理學士（主修資訊系統與電腦科學）。
-    </p>
-  </section>
-
-  <section>
-    <h2 class="section-title">主要經歷</h2>
-
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">聯合創辦人兼 Educator-in-Residence</div>
-        <div class="role-date">2025 – 至今</div>
-      </div>
-      <div class="role-org">Applied AI Academy &amp; Zoe 蘇姨老師 <span class="loc">· 香港</span></div>
-      <ul>
-        <li>聯合創辦 <strong>Applied AI Academy</strong>，手機學習平台以十分鐘日課協助在職人士建立實用 AI 能力；負責<strong>課程設計、教學策略與學員體驗</strong>。</li>
-        <li>以多行業在職人士訪談為基礎建立課程框架，平台首三個月透過自然增長累積 <strong>7,000+ 學員</strong>。</li>
-        <li>創辦雙語內容頻道「<strong>Zoe 蘇姨老師</strong>」，覆蓋全球 AI 教育趨勢、企業與學校導入 AI 的案例，及對 AI 學習的理性觀點。</li>
-        <li>過去 30 天 <strong>30 萬+ 觀看</strong>，社交媒體 <strong>8,000+ 追蹤者</strong>。頻道：<em>@auntieso.teachesstem</em>。</li>
-      </ul>
-    </div>
-
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">Product Manager</div>
-        <div class="role-date">2019 – 2025</div>
-      </div>
-      <div class="role-org">Arcadis（多倫多）・Freehunter（香港）</div>
-      <ul>
-        <li>於跨國工程公司及香港新創擔任產品經理，負責 user story、路線圖與跨團隊協作；產品經驗成為日後課程設計與教學節奏的基礎。</li>
-      </ul>
-    </div>
-
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">教師 · 數學、電腦科及雙語選修</div>
-        <div class="role-date">2021 – 2022</div>
-      </div>
-      <div class="role-org">拔萃男書院附屬小學 <span class="loc">· 香港</span></div>
-      <ul>
-        <li>教授英、法、粵、普語多元文化班級；參與學校 <strong>STEAM 與環保委員會</strong>。</li>
-      </ul>
-    </div>
-
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">課程設計師 · AI 與媒體素養</div>
-        <div class="role-date">2021</div>
-      </div>
-      <div class="role-org">AI Academy <span class="loc">· 香港</span></div>
-      <ul>
-        <li>設計 AI 與媒體素養課程（Scratch AI、網絡倫理、數碼公民、AI 應用），部署於 <strong>55+ 學校</strong>，覆蓋 <strong>43,000+ 學生與 1,900+ 教師</strong>。</li>
-      </ul>
-    </div>
-
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">獨立教學與補習</div>
-        <div class="role-date">2014 – 至今</div>
-      </div>
-      <div class="role-org">私人補習及多間教育機構 <span class="loc">· 香港</span></div>
-      <ul>
-        <li>提供 <strong>AI、編程、英文、數學</strong>個人化補習；客戶包括 <strong>喇沙書院、愉景灣國際學校、拔萃女書院</strong>等。</li>
-        <li>曾任 First Code Academy STEM 導師（2019–2020）、國際蒙特梭利夏令營老師（2021）。</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">學歷</h2>
-    <div class="edu-item">
-      <div class="edu-head">
+      <header class="header">
         <div>
-          <div class="edu-degree">教育文憑（PGDE）</div>
-          <div class="edu-school">香港中文大學</div>
+          <h1 class="name">
+            黃可盈
+            <span class="romanised">Wong Ho Ying (Zoe)</span>
+          </h1>
+          <div class="tagline">
+            Applied AI Academy 聯合創辦人兼 Educator-in-Residence
+          </div>
         </div>
-        <div class="role-date">2020 – 2021</div>
-      </div>
-      <div class="edu-detail">獲頒優異學業及教學表現獎・教學實習 Grade A。</div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-head">
-        <div>
-          <div class="edu-degree">工商管理學士（BBA）</div>
-          <div class="edu-school">香港大學</div>
+        <div class="portrait">
+          <img src="/cover.png" alt="黃可盈 Wong Ho Ying" />
         </div>
-        <div class="role-date">2014 – 2018</div>
+      </header>
+
+      <div class="contact-bar">
+        <span>+852 9687 8036</span>
+        <span class="sep">·</span>
+        <a href="mailto:wonghoyingzoe@gmail.com">wonghoyingzoe@gmail.com</a>
+        <span class="sep">·</span>
+        <span>香港</span>
       </div>
-      <div class="edu-detail">主修資訊系統與電腦科學。</div>
+
+      <section>
+        <h2 class="section-title">個人簡介</h2>
+        <p class="profile-text">
+          註冊教師，<strong>逾十年課堂與課程設計經驗</strong>，及七年企業軟件、教育科技與早期創業的產品經理資歷。<strong
+            >Applied AI Academy</strong
+          >聯合創辦人，協助在職人士在工作、生活與學習中靈活運用 AI；曾編寫 AI
+          素養課程，部署於 <strong>55+ 學校</strong>，覆蓋
+          <strong>43,000+ 學生與 1,900+ 教師</strong>。雙語內容創作者「<strong
+            >Zoe 蘇姨老師</strong
+          >」，過去 30 天累計 <strong>30 萬+ 觀看</strong>，社交媒體跨平台
+          <strong>8,000+ 追蹤</strong
+          >。持有香港中文大學教育文憑（PGDE）及香港大學工商管理學士（主修資訊系統與電腦科學）。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">主要經歷</h2>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">聯合創辦人兼 Educator-in-Residence</div>
+            <div class="role-date">2025 – 至今</div>
+          </div>
+          <div class="role-org">
+            Applied AI Academy &amp; Zoe 蘇姨老師
+            <span class="loc">· 香港</span>
+          </div>
+          <ul>
+            <li>
+              聯合創辦
+              <strong>Applied AI Academy</strong
+              >，手機學習平台以十分鐘日課協助在職人士建立實用 AI
+              能力；負責<strong>課程設計、教學策略與學員體驗</strong>。
+            </li>
+            <li>
+              以多行業在職人士訪談為基礎建立課程框架，平台首三個月透過自然增長累積
+              <strong>7,000+ 學員</strong>。
+            </li>
+            <li>
+              創辦雙語內容頻道「<strong>Zoe 蘇姨老師</strong>」，覆蓋全球 AI
+              教育趨勢、企業與學校導入 AI 的案例，及對 AI 學習的理性觀點。
+            </li>
+            <li>
+              過去 30 天 <strong>30 萬+ 觀看</strong>，社交媒體
+              <strong>8,000+ 追蹤者</strong
+              >。頻道：<em>@auntieso.teachesstem</em>。
+            </li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">Product Manager</div>
+            <div class="role-date">2019 – 2025</div>
+          </div>
+          <div class="role-org">Arcadis（多倫多）・Freehunter（香港）</div>
+          <ul>
+            <li>
+              於跨國工程公司及香港新創擔任產品經理，負責 user
+              story、路線圖與跨團隊協作；產品經驗成為日後課程設計與教學節奏的基礎。
+            </li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">教師 · 數學、電腦科及雙語選修</div>
+            <div class="role-date">2021 – 2022</div>
+          </div>
+          <div class="role-org">
+            拔萃男書院附屬小學 <span class="loc">· 香港</span>
+          </div>
+          <ul>
+            <li>
+              教授英、法、粵、普語多元文化班級；參與學校
+              <strong>STEAM 與環保委員會</strong>。
+            </li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">課程設計師 · AI 與媒體素養</div>
+            <div class="role-date">2021</div>
+          </div>
+          <div class="role-org">AI Academy <span class="loc">· 香港</span></div>
+          <ul>
+            <li>
+              設計 AI 與媒體素養課程（Scratch AI、網絡倫理、數碼公民、AI
+              應用），部署於 <strong>55+ 學校</strong>，覆蓋
+              <strong>43,000+ 學生與 1,900+ 教師</strong>。
+            </li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">獨立教學與補習</div>
+            <div class="role-date">2014 – 至今</div>
+          </div>
+          <div class="role-org">
+            私人補習及多間教育機構 <span class="loc">· 香港</span>
+          </div>
+          <ul>
+            <li>
+              提供 <strong>AI、編程、英文、數學</strong>個人化補習；客戶包括
+              <strong>喇沙書院、愉景灣國際學校、拔萃女書院</strong>等。
+            </li>
+            <li>
+              曾任 First Code Academy STEM
+              導師（2019–2020）、國際蒙特梭利夏令營老師（2021）。
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">學歷</h2>
+        <div class="edu-item">
+          <div class="edu-head">
+            <div>
+              <div class="edu-degree">教育文憑（PGDE）</div>
+              <div class="edu-school">香港中文大學</div>
+            </div>
+            <div class="role-date">2020 – 2021</div>
+          </div>
+          <div class="edu-detail">
+            獲頒優異學業及教學表現獎・教學實習 Grade A。
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-head">
+            <div>
+              <div class="edu-degree">工商管理學士（BBA）</div>
+              <div class="edu-school">香港大學</div>
+            </div>
+            <div class="role-date">2014 – 2018</div>
+          </div>
+          <div class="edu-detail">主修資訊系統與電腦科學。</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">證書</h2>
+        <div class="skill-line">
+          Gemini Certified Educator・Generative AI for Educators with
+          Gemini・Google AI for K-12 Educators（Google for Education，2025）
+        </div>
+        <div class="skill-line">
+          Certified Scrum Product Owner（CSPO）・Apple
+          Teacher・香港教育局註冊教師證書（2021）
+        </div>
+        <div class="skill-line">Ontario Certified Teacher（OCT，進行中）</div>
+      </section>
+
+      <section>
+        <h2 class="section-title">教育產品</h2>
+        <div class="project">
+          <div class="project-head">
+            <div class="project-name">Genie Worksheet AI</div>
+            <div class="project-role">創辦人 · 課程內容設計</div>
+          </div>
+          <div class="project-desc">
+            AI 工作紙生成工具，覆蓋 HK EDB、IB PYP、新加坡 MOE、NCERT
+            等課程小一至小六的數學、英文、科學與中文。Beta 階段獲
+            <strong>100+ 家長與教師</strong>採用，備課時間減少約
+            <strong>80%</strong>。
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">核心能力</h2>
+        <div class="skill-line">
+          <span class="cat">教學與課程</span> — 探究式學習、差異化教學、STEM
+          與機械人、課程設計、AI 素養、雙語課堂管理。
+        </div>
+        <div class="skill-line">
+          <span class="cat">AI 與教育工具</span> — Claude、Gemini、OpenAI /
+          GPT、Scratch AI、Teachable Machine、MIT App Inventor、Minecraft
+          Education、Arduino。
+        </div>
+        <div class="skill-line">
+          <span class="cat">產品與分析</span> — 課程結構設計、user story、A/B
+          測試、SQL、Mixpanel。
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">語言</h2>
+        <div class="compact-row">
+          <span class="cat">語言</span><span>粵語、英語、普通話。</span>
+        </div>
+        <div class="compact-row">
+          <span class="cat">義務工作</span
+          ><span
+            >Canadian Association for Girls in Science（CAGIS）義工，2024 –
+            2025。</span
+          >
+        </div>
+      </section>
+
+      <div class="page-footer">黃可盈 Wong Ho Ying (Zoe) · 履歷 · 2026</div>
     </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">證書</h2>
-    <div class="skill-line">Gemini Certified Educator・Generative AI for Educators with Gemini・Google AI for K-12 Educators（Google for Education，2025）</div>
-    <div class="skill-line">Certified Scrum Product Owner（CSPO）・Apple Teacher・香港教育局註冊教師證書（2021）</div>
-    <div class="skill-line">Ontario Certified Teacher（OCT，進行中）</div>
-  </section>
-
-  <section>
-    <h2 class="section-title">教育產品</h2>
-    <div class="project">
-      <div class="project-head">
-        <div class="project-name">Genie Worksheet AI</div>
-        <div class="project-role">創辦人 · 課程內容設計</div>
-      </div>
-      <div class="project-desc">
-        AI 工作紙生成工具，覆蓋 HK EDB、IB PYP、新加坡 MOE、NCERT 等課程小一至小六的數學、英文、科學與中文。Beta 階段獲 <strong>100+ 家長與教師</strong>採用，備課時間減少約 <strong>80%</strong>。
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">核心能力</h2>
-    <div class="skill-line"><span class="cat">教學與課程</span> — 探究式學習、差異化教學、STEM 與機械人、課程設計、AI 素養、雙語課堂管理。</div>
-    <div class="skill-line"><span class="cat">AI 與教育工具</span> — Claude、Gemini、OpenAI / GPT、Scratch AI、Teachable Machine、MIT App Inventor、Minecraft Education、Arduino。</div>
-    <div class="skill-line"><span class="cat">產品與分析</span> — 課程結構設計、user story、A/B 測試、SQL、Mixpanel。</div>
-  </section>
-
-  <section>
-    <h2 class="section-title">語言</h2>
-    <div class="compact-row"><span class="cat">語言</span><span>粵語、英語、普通話。</span></div>
-    <div class="compact-row"><span class="cat">義務工作</span><span>Canadian Association for Girls in Science（CAGIS）義工，2024 – 2025。</span></div>
-  </section>
-
-  <div class="page-footer">
-    黃可盈 Wong Ho Ying (Zoe) · 履歷 · 2026
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

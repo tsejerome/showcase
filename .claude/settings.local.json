@@ -10,7 +10,10 @@
       "Bash(echo \"started pid $!\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/zoe-wong-cv-zh/)",
       "Bash(kill 25690)",
-      "Bash(awk 'NR>=310 && NR<=325' /Users/tsejerome/Desktop/showcase/zoe-wong-cv-zh/index.html)"
+      "Bash(awk 'NR>=310 && NR<=325' /Users/tsejerome/Desktop/showcase/zoe-wong-cv-zh/index.html)",
+      "WebFetch(domain:)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-sandbox --window-size=900,2400 --screenshot=/tmp/zoe-zh.png --hide-scrollbars file:///Users/tsejerome/Desktop/showcase/zoe-wong-cv-zh/index.html)",
+      "Read(//private/tmp/**)"
     ]
   }
 }
