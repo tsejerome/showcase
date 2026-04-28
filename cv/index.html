@@ -313,6 +313,32 @@
         font-weight: 600;
       }
 
+      .profile ul {
+        list-style: none;
+        margin-top: 12px;
+      }
+
+      .profile li {
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--text);
+        padding-left: 18px;
+        position: relative;
+      }
+
+      .profile li + li {
+        margin-top: 4px;
+      }
+
+      .profile li::before {
+        content: "·";
+        position: absolute;
+        left: 6px;
+        top: -1px;
+        font-weight: 700;
+        color: var(--soft);
+      }
+
       /* ── CREDENTIAL LIST ── */
       .creds {
         list-style: none;
@@ -536,7 +562,8 @@
         display: grid;
         grid-template-columns: 1fr auto;
         gap: 4px 16px;
-        padding: 8px 0;
+        padding: 0 0 22px;
+        margin-bottom: 22px;
         border-bottom: 1px solid var(--rule-soft);
         font-size: 12.5px;
         align-items: baseline;
@@ -544,6 +571,8 @@
 
       .awards li:last-child {
         border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
 
       .awards .a-meta {
@@ -647,7 +676,7 @@
       </header>
 
       <div class="meta-strip">
-        <span>Hong Kong SAR· Toronto</span>
+        <span>Hong Kong SAR · Toronto</span>
         <span
           ><a href="mailto:hello@appliedaiacademy.app"
             >hello@appliedaiacademy.app</a
@@ -655,12 +684,12 @@
         >
         <span
           ><a href="https://twitter.com/tsejerome" target="_blank"
-            >@tsejerome</a
+            >X / Twitter</a
           ></span
         >
         <span
           ><a href="https://linkedin.com/in/tse-jerome" target="_blank"
-            >linkedin.com/in/tse-jerome</a
+            >LinkedIn</a
           ></span
         >
       </div>
@@ -672,78 +701,23 @@
           Engineer and founder turned educator. Currently CTO &amp; co-founder
           of <strong>Applied AI Academy</strong>, a mobile learning platform
           helping working professionals build practical AI literacy in ten
-          minutes a day. Over <strong>7,000 students and mentees</strong> in the
-          first six months.
+          minutes a day. Over <strong>7,000 learners</strong> in the first three
+          months.
         </p>
-        <p>
-          Guest Lecturer at <strong>The University of Hong Kong</strong> on AI
-          and entrepreneurship. Previously co-founded
-          <strong>Freehunter</strong> (Hong Kong's largest freelance
-          marketplace, 100,000+ registered users) and
-          <strong>Jupitrr AI</strong> (an AI video platform serving 170,000+
-          users worldwide).
-        </p>
-      </section>
-
-      <!-- ── CREDENTIALS ────────────────────────────────────────── -->
-      <section>
-        <div class="section-head"><h2>Credentials</h2></div>
-        <ul class="creds">
-          <li>Guest Lecturer · The University of Hong Kong</li>
-          <li>7,000+ students &amp; mentees at Applied AI Academy</li>
+        <ul>
           <li>
-            Founded Hong Kong's largest freelance marketplace —
-            <a href="https://freehunter.hk" target="_blank">Freehunter HK</a>
-            (100,000+ users)
+            Guest Lecturer at <strong>The University of Hong Kong</strong> on AI
+            and entrepreneurship.
           </li>
           <li>
-            Shipped AI products used worldwide —
-            <a href="https://jupitrr.com" target="_blank">Jupitrr AI</a>
-            (170,000+ users)
+            Previously co-founded <strong>Freehunter</strong> — Hong Kong's
+            largest freelance marketplace, 100,000+ users.
           </li>
-          <li>The Loop HK's 30 Under 30, Class of 2019</li>
-          <li>Raised over US$3M in venture funding</li>
+          <li>
+            Previously co-founded <strong>Jupitrr AI</strong> — an AI video
+            platform serving 170,000+ users worldwide.
+          </li>
         </ul>
-      </section>
-
-      <!-- ── APPLIED AI ACADEMY ─────────────────────────────────── -->
-      <section>
-        <div class="section-head"><h2>Applied AI Academy</h2></div>
-        <p
-          style="
-            font-size: 13.5px;
-            line-height: 1.75;
-            color: var(--text);
-            margin-bottom: 18px;
-          "
-        >
-          I'm building a school for the AI-native builder generation:
-          <span class="italic" style="color: var(--accent)"
-            >7,000+ students</span
-          >
-          in our first six months, all chasing the same thing — leverage.
-        </p>
-        <div class="pitch-blocks">
-          <div class="pitch-block">
-            <h3>The Problem</h3>
-            <p>
-              Colleagues who use AI ship twice the output in half the time — and
-              those who don't are quietly outpaced. ChatGPT hands you a blank
-              box. YouTube is aimed at developers. Corporate L&amp;D is six
-              months behind. Professionals don't want courses — they want
-              leverage.
-            </p>
-          </div>
-          <div class="pitch-block">
-            <h3>Our Solution</h3>
-            <p>
-              Ten minutes a day. Lessons tuned to your role, with a built-in AI
-              coach available whenever you're stuck. Curriculum grounded in real
-              workplace tasks — and now expanding into in-person workshops for
-              teams and organisations.
-            </p>
-          </div>
-        </div>
       </section>
 
       <!-- ── EXPERIENCE ─────────────────────────────────────────── -->
@@ -754,11 +728,15 @@
           <div class="role-head">
             <div class="role-title">
               CTO &amp; Co-founder,
-              <span class="role-org">Applied AI Academy</span>
+              <span class="role-org"
+                ><a href="https://www.appliedaiacademy.app" target="_blank"
+                  >Applied AI Academy</a
+                ></span
+              >
             </div>
-            <div class="role-meta">Oct 2025 — Present</div>
+            <div class="role-meta">Feb 2026 — Present</div>
           </div>
-          <div class="role-loc">Toronto · Remote</div>
+          <div class="role-loc">Hong Kong</div>
           <div class="role-summary">
             Mobile learning platform delivering practical AI training to working
             professionals through ten-minute daily lessons grounded in real
@@ -766,8 +744,8 @@
           </div>
           <ul>
             <li>
-              Grew the learner base to over <strong>7,000 students</strong>
-              within the first six months, entirely through organic channels.
+              Grew the learner base to over <strong>7,000 learners</strong>
+              within the first 3 months, entirely through organic channels.
             </li>
             <li>
               Built the mobile application end-to-end, including daily lessons,
@@ -865,7 +843,8 @@
         <div class="role">
           <div class="role-head">
             <div class="role-title">
-              IT Consultant, <span class="role-org">Maple Couple Study</span>
+              AI & IT Consultant,
+              <span class="role-org">Maple Couple Study</span>
             </div>
             <div class="role-meta">Dec 2020 — Mar 2022</div>
           </div>
@@ -892,7 +871,7 @@
           <div class="role-head">
             <div class="role-title">
               Software Consultant,
-              <span class="role-org">Nike Limited &amp; Toys"R"Us</span>
+              <span class="role-org">Nike Limited, Toys"R"Us Macau</span>
             </div>
           </div>
           <div class="role-loc">Hong Kong · Enterprise</div>
@@ -913,8 +892,8 @@
               invited speaker on entrepreneurship and applied AI.
             </li>
             <li>
-              <strong>Applied AI Academy</strong> — leading curriculum and
-              instruction for over 7,000 students and mentees (2025 – present).
+              <strong>Hackathon Judge</strong> — Cathay Pacific Hackathon and
+              University of Toronto Hackathon.
             </li>
             <li>
               <strong>Mentorship &amp; advisory</strong> — regular office hours
@@ -924,6 +903,10 @@
             <li>
               <strong>Public writing</strong> — ongoing essays and commentary on
               AI, product, and engineering across professional channels.
+            </li>
+            <li>
+              <strong>Applied AI Academy</strong> — leading curriculum and
+              instruction for over 7,000 learners (2026 – present).
             </li>
           </ul>
         </div>
@@ -1014,30 +997,6 @@
             ><span class="a-meta">2020</span>
           </li>
         </ul>
-      </section>
-
-      <!-- ── REFERENCES ─────────────────────────────────────────── -->
-      <section>
-        <div class="section-head"><h2>References</h2></div>
-        <p style="font-size: 12.5px; line-height: 1.7; color: var(--soft)">
-          Available on request. For ongoing work, see
-          <a
-            href="https://jupitrr.com"
-            target="_blank"
-            style="color: var(--text)"
-            >jupitrr.com</a
-          >
-          and
-          <a
-            href="https://freehunter.hk"
-            target="_blank"
-            style="color: var(--text)"
-            >freehunter.hk</a
-          >; correspondence to
-          <a href="mailto:hello@appliedaiacademy.app" style="color: var(--text)"
-            >hello@appliedaiacademy.app</a
-          >.
-        </p>
       </section>
     </article>
 
